@@ -1,0 +1,660 @@
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+DEBUG main com.zaxxer.hikari.util.DriverDataSource - Loaded driver with class name com.mysql.jdbc.Driver for jdbcUrl=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=true&zeroDateTimeBehavior=convertToNull
+INFO main com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.jdbc.JDBC4Connection@63f5bad5
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Before shutdown stats (total=1, active=0, idle=1, waiting=0)
+DEBUG HikariPool-2 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Closing connection com.mysql.jdbc.JDBC4Connection@63f5bad5: (connection evicted)
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+WARN main com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+INFO main com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+DEBUG main com.netflix.hystrix.strategy.HystrixPlugins - Created HystrixDynamicProperties. Using class : com.netflix.hystrix.strategy.properties.archaius.HystrixDynamicPropertiesArchaius
+INFO main com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@57eac75b
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.enabled to use NEXT property: hystrix.command.default.circuitBreaker.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.requestVolumeThreshold to use NEXT property: hystrix.command.default.circuitBreaker.requestVolumeThreshold = 20
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.sleepWindowInMilliseconds to use NEXT property: hystrix.command.default.circuitBreaker.sleepWindowInMilliseconds = 5000
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.errorThresholdPercentage to use NEXT property: hystrix.command.default.circuitBreaker.errorThresholdPercentage = 50
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.forceOpen to use NEXT property: hystrix.command.default.circuitBreaker.forceOpen = false
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.circuitBreaker.forceClosed to use NEXT property: hystrix.command.default.circuitBreaker.forceClosed = false
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.isolation.strategy to use NEXT property: hystrix.command.default.execution.isolation.strategy = THREAD
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.isolation.thread.timeoutInMilliseconds to use NEXT property: hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds = 1000
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.timeout.enabled to use NEXT property: hystrix.command.default.execution.timeout.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.isolation.thread.interruptOnTimeout to use NEXT property: hystrix.command.default.execution.isolation.thread.interruptOnTimeout = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.isolation.thread.interruptOnFutureCancel to use NEXT property: hystrix.command.default.execution.isolation.thread.interruptOnFutureCancel = false
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.execution.isolation.semaphore.maxConcurrentRequests to use NEXT property: hystrix.command.default.execution.isolation.semaphore.maxConcurrentRequests = 10
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.fallback.isolation.semaphore.maxConcurrentRequests to use NEXT property: hystrix.command.default.fallback.isolation.semaphore.maxConcurrentRequests = 10
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.fallback.enabled to use NEXT property: hystrix.command.default.fallback.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingStats.timeInMilliseconds to use NEXT property: hystrix.command.default.metrics.rollingStats.timeInMilliseconds = 10000
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingStats.numBuckets to use NEXT property: hystrix.command.default.metrics.rollingStats.numBuckets = 10
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingPercentile.enabled to use NEXT property: hystrix.command.default.metrics.rollingPercentile.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingPercentile.timeInMilliseconds to use NEXT property: hystrix.command.default.metrics.rollingPercentile.timeInMilliseconds = 60000
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingPercentile.numBuckets to use NEXT property: hystrix.command.default.metrics.rollingPercentile.numBuckets = 6
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.rollingPercentile.bucketSize to use NEXT property: hystrix.command.default.metrics.rollingPercentile.bucketSize = 100
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.metrics.healthSnapshot.intervalInMilliseconds to use NEXT property: hystrix.command.default.metrics.healthSnapshot.intervalInMilliseconds = 500
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.requestCache.enabled to use NEXT property: hystrix.command.default.requestCache.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.command.CommandHelloWorld.requestLog.enabled to use NEXT property: hystrix.command.default.requestLog.enabled = true
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.allowMaximumSizeToDivergeFromCoreSize to use NEXT property: hystrix.threadpool.default.allowMaximumSizeToDivergeFromCoreSize = false
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.coreSize to use NEXT property: hystrix.threadpool.default.coreSize = 10
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.maximumSize to use NEXT property: hystrix.threadpool.default.maximumSize = 10
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.keepAliveTimeMinutes to use NEXT property: hystrix.threadpool.default.keepAliveTimeMinutes = 1
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.maxQueueSize to use NEXT property: hystrix.threadpool.default.maxQueueSize = -1
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.queueSizeRejectionThreshold to use NEXT property: hystrix.threadpool.default.queueSizeRejectionThreshold = 5
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.metrics.rollingStats.timeInMilliseconds to use NEXT property: hystrix.threadpool.default.metrics.rollingStats.timeInMilliseconds = 10000
+DEBUG main com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedProperty - Flipping property: hystrix.threadpool.ExamplegRroup.metrics.rollingStats.numBuckets to use NEXT property: hystrix.threadpool.default.metrics.rollingStats.numBuckets = 10
+DEBUG Finalizer org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3a2227e8: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@10f47483: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6469bcec: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@66c44120: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@31974ec6: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@1ac00499: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@a7ee513: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@758b33d9: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7431abbe: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7100c179: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4ea0b088: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5edc2787: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@569ffc4b: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@68145e23: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@44e6741d: (connection evicted)
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/conf.xml]'
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/xuedui.zhao/Projects/myProject/target/test-classes/mybatis/mapper/user.xml]'
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4302394a] was not registered for synchronization because synchronization is not active
+DEBUG main com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+DEBUG main com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+DEBUG main com.zaxxer.hikari.HikariConfig - autoCommit......................true
+DEBUG main com.zaxxer.hikari.HikariConfig - catalog.........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSource......................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+DEBUG main com.zaxxer.hikari.HikariConfig - driverClassName.................none
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+DEBUG main com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+DEBUG main com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+DEBUG main com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+DEBUG main com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+DEBUG main com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+DEBUG main com.zaxxer.hikari.HikariConfig - maximumPoolSize.................15
+DEBUG main com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+DEBUG main com.zaxxer.hikari.HikariConfig - minimumIdle.....................15
+DEBUG main com.zaxxer.hikari.HikariConfig - password........................<masked>
+DEBUG main com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+DEBUG main com.zaxxer.hikari.HikariConfig - readOnly........................false
+DEBUG main com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+DEBUG main com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - schema..........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+DEBUG main com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+DEBUG main com.zaxxer.hikari.HikariConfig - username........................"root"
+DEBUG main com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+DEBUG main com.zaxxer.hikari.util.DriverDataSource - Loaded driver with class name com.mysql.jdbc.Driver for jdbcUrl=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+INFO main com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@45c34a2
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5551ba0a
+WARN HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s250ms).
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=2, active=0, idle=2, waiting=0)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@21090aba
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@71e07586
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@74325d5e
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@76d3d693
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4383aa3d
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4c1df9b5
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@2bdfaac9
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4701bd1
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@19679c94
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4efd6665
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6d20b49d
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6deb17e1
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4e7702cb
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=15, active=0, idle=15, waiting=0)
+WARN HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m18s603ms).
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@484967382 wrapping com.mysql.jdbc.JDBC4Connection@45c34a2] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.getUsers_COUNT - ==>  Preparing: SELECT count(0) FROM user 
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG main com.jdbc.test.UserMapper.getUsers_COUNT - ==> Parameters: 
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG main com.jdbc.test.UserMapper.getUsers_COUNT - <==      Total: 1
+DEBUG main com.jdbc.test.UserMapper.getUsers - ==>  Preparing: select * from user limit ?,? 
+DEBUG main com.jdbc.test.UserMapper.getUsers - ==> Parameters: 0(Integer), 2(Integer)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=1, idle=14, waiting=0)
+DEBUG main com.jdbc.test.UserMapper.getUsers - <==      Total: 2
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4302394a]
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c2bb2f5] was not registered for synchronization because synchronization is not active
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1214674166 wrapping com.mysql.jdbc.JDBC4Connection@45c34a2] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==>  Preparing: update user SET deleteFlag = ? where id = ? 
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==> Parameters: true(Boolean), 1(Integer)
+DEBUG main com.jdbc.test.UserMapper.updateUser - <==    Updates: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c2bb2f5]
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@45c34a2: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5551ba0a: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@21090aba: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@71e07586: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@74325d5e: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@76d3d693: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4383aa3d: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4c1df9b5: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2bdfaac9: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4701bd1: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@19679c94: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4efd6665: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6d20b49d: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6deb17e1: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4e7702cb: (connection evicted)
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/conf.xml]'
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/xuedui.zhao/Projects/myProject/target/test-classes/mybatis/mapper/user.xml]'
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c69b875] was not registered for synchronization because synchronization is not active
+DEBUG main com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+DEBUG main com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+DEBUG main com.zaxxer.hikari.HikariConfig - autoCommit......................true
+DEBUG main com.zaxxer.hikari.HikariConfig - catalog.........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSource......................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+DEBUG main com.zaxxer.hikari.HikariConfig - driverClassName.................none
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+DEBUG main com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+DEBUG main com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+DEBUG main com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+DEBUG main com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+DEBUG main com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+DEBUG main com.zaxxer.hikari.HikariConfig - maximumPoolSize.................15
+DEBUG main com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+DEBUG main com.zaxxer.hikari.HikariConfig - minimumIdle.....................15
+DEBUG main com.zaxxer.hikari.HikariConfig - password........................<masked>
+DEBUG main com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+DEBUG main com.zaxxer.hikari.HikariConfig - readOnly........................false
+DEBUG main com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+DEBUG main com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - schema..........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+DEBUG main com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+DEBUG main com.zaxxer.hikari.HikariConfig - username........................"root"
+DEBUG main com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+DEBUG main com.zaxxer.hikari.util.DriverDataSource - Loaded driver with class name com.mysql.jdbc.Driver for jdbcUrl=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+INFO main com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@384edc3b
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@45979426 wrapping com.mysql.jdbc.JDBC4Connection@384edc3b] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - ==>  Preparing: SELECT count(0) FROM user WHERE id = ? 
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0)
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - ==> Parameters: 1(Integer)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6d1d296d
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@197de203
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@124debfd
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - <==      Total: 1
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4c7ee96c
+DEBUG main com.jdbc.test.UserMapper.getUser - ==>  Preparing: select * from user where id=? limit ?,? 
+DEBUG main com.jdbc.test.UserMapper.getUser - ==> Parameters: 1(Integer), 0(Integer), 2(Integer)
+DEBUG main com.jdbc.test.UserMapper.getUser - <==      Total: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c69b875]
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@38cea88a
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a95fd1c] was not registered for synchronization because synchronization is not active
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@49dc3fe
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5ee6c72a
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@2fe8858c
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@14f4e035
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@52061e6
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3df8261f
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6282d528
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7596b47a
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@363a5275
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=15, active=0, idle=15, waiting=0)
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1241500935 wrapping com.mysql.jdbc.JDBC4Connection@384edc3b] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==>  Preparing: update user SET deleteFlag = ? where id = ? 
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==> Parameters: true(Boolean), 1(Integer)
+DEBUG main com.jdbc.test.UserMapper.updateUser - <==    Updates: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a95fd1c]
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@384edc3b: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6d1d296d: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@197de203: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@124debfd: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4c7ee96c: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@38cea88a: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@49dc3fe: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5ee6c72a: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2fe8858c: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@14f4e035: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@52061e6: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3df8261f: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6282d528: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7596b47a: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@363a5275: (connection evicted)
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/conf.xml]'
+DEBUG main org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/xuedui.zhao/Projects/myProject/target/test-classes/mybatis/mapper/user.xml]'
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4302394a] was not registered for synchronization because synchronization is not active
+DEBUG main com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+DEBUG main com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+DEBUG main com.zaxxer.hikari.HikariConfig - autoCommit......................true
+DEBUG main com.zaxxer.hikari.HikariConfig - catalog.........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSource......................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+DEBUG main com.zaxxer.hikari.HikariConfig - driverClassName.................none
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+DEBUG main com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+DEBUG main com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+DEBUG main com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+DEBUG main com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+DEBUG main com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+DEBUG main com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+DEBUG main com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+DEBUG main com.zaxxer.hikari.HikariConfig - maximumPoolSize.................15
+DEBUG main com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+DEBUG main com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+DEBUG main com.zaxxer.hikari.HikariConfig - minimumIdle.....................15
+DEBUG main com.zaxxer.hikari.HikariConfig - password........................<masked>
+DEBUG main com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+DEBUG main com.zaxxer.hikari.HikariConfig - readOnly........................false
+DEBUG main com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+DEBUG main com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+DEBUG main com.zaxxer.hikari.HikariConfig - schema..........................none
+DEBUG main com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+DEBUG main com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+DEBUG main com.zaxxer.hikari.HikariConfig - username........................"root"
+DEBUG main com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+DEBUG main com.zaxxer.hikari.util.DriverDataSource - Loaded driver with class name com.mysql.jdbc.Driver for jdbcUrl=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull
+INFO main com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+DEBUG main com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@45c34a2
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@64b9588c
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@10d03f03
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@115dcf8e
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@45da9815
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@56d12ba
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@74bf091
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@a4657e1
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@24f940ea
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@72d5d965
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@491b8108
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6264742e
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@325a3c63
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7ec77601
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@66a49fa4
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+WARN HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m59s614ms).
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@74bf091: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@2742d6d8
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@45c34a2: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3072647f
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@24f940ea: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@444f9e96
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@66a49fa4: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@49d5284d
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6264742e: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@64b9588c: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@1111eaac
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@645dc57
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@56d12ba: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@795bf547
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@10d03f03: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@44ee0cf3
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@a4657e1: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@54378cb2
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7ec77601: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@66fcf57b
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@45da9815: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5c370583
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@115dcf8e: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@2866dbc6
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@72d5d965: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4be2f792
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@325a3c63: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7d54e295
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@491b8108: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6e0c56cc
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@1111eaac: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@44ac7eae
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@444f9e96: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@30e53800
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@66fcf57b: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5939741e
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@49d5284d: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@65cf9a30
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3072647f: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6dfd4a36
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5c370583: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@68945220
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2742d6d8: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@405327d0
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4be2f792: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@217eea82
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@44ee0cf3: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@57c0b410
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@795bf547: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@6b129907
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@645dc57: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@537575c
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@54378cb2: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@713fdb6b
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7d54e295: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7b3323d9
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2866dbc6: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5c2f86a4
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6e0c56cc: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@287e5861
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+WARN HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m8s845ms).
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6dfd4a36: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@38316888
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@44ac7eae: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@4c844826
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@405327d0: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@65200a32
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@217eea82: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@19527718
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@65cf9a30: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7f766146
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6b129907: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3e53ddcb
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@68945220: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@15677e21
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5939741e: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@617fa075
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@30e53800: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3d71b59e
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@713fdb6b: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3404d155
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@57c0b410: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@ee26cbb
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@537575c: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3746125a
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7b3323d9: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5f7244c8
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5c2f86a4: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@524ca76b
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@287e5861: (connection has passed maxLifetime)
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@26131520
+DEBUG HikariPool-1 connection adder com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 housekeeper com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=15, active=0, idle=15, waiting=0)
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@696676205 wrapping com.mysql.jdbc.JDBC4Connection@38316888] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - ==>  Preparing: SELECT count(0) FROM user WHERE id = ? 
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - ==> Parameters: 1(Integer)
+DEBUG main com.jdbc.test.UserMapper.getUser_COUNT - <==      Total: 1
+DEBUG main com.jdbc.test.UserMapper.getUser - ==>  Preparing: select * from user where id=? limit ?,? 
+DEBUG main com.jdbc.test.UserMapper.getUser - ==> Parameters: 1(Integer), 0(Integer), 2(Integer)
+DEBUG main com.jdbc.test.UserMapper.getUser - <==      Total: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4302394a]
+DEBUG main org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+DEBUG main org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ea4cfe0] was not registered for synchronization because synchronization is not active
+DEBUG main org.mybatis.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1518425180 wrapping com.mysql.jdbc.JDBC4Connection@38316888] will not be managed by Spring
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==>  Preparing: update user SET deleteFlag = ? where id = ? 
+DEBUG main com.jdbc.test.UserMapper.updateUser - ==> Parameters: true(Boolean), 1(Integer)
+DEBUG main com.jdbc.test.UserMapper.updateUser - <==    Updates: 1
+DEBUG main org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ea4cfe0]
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=15, active=0, idle=15, waiting=0)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@38316888: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4c844826: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@65200a32: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@19527718: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@7f766146: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3e53ddcb: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@15677e21: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@617fa075: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3d71b59e: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3404d155: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@ee26cbb: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@3746125a: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@5f7244c8: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@524ca76b: (connection evicted)
+DEBUG HikariPool-1 connection closer com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@26131520: (connection evicted)
+DEBUG Thread-1 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO Thread-1 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

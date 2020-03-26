@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Agent-Class: com.snow.agent.TestAgent
+Created-By: zxd
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+
+Manifest-Version: 1.0
+Premain-Class: com.snow.bytebuddy.MyAgent
+Can-Redefine-Classes: true
