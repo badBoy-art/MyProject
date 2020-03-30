@@ -1,6 +1,7 @@
 package com.date.study;
 
 import com.google.common.collect.Lists;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -8,6 +9,9 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -123,6 +127,12 @@ public class study {
     public void testAfter() {
         Date date = new Date();
         System.out.println(date.after(date));
+    }
+
+    @Test
+    public void test() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime.isBefore(LocalDateTime.of(LocalDate.of(2020, 03, 31), LocalTime.of(3, 59, 59))));
     }
 
 }

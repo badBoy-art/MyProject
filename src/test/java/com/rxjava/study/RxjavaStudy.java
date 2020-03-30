@@ -29,12 +29,9 @@ public class RxjavaStudy {
     @Test
     public void test01() {
         Observable<String> myObervable = Observable.create(
-                new Observable.OnSubscribe<String>() {
-                    @Override
-                    public void call(Subscriber<? super String> subscriber) {
-                        subscriber.onNext("Hello World jx");
-                        subscriber.onCompleted();
-                    }
+                subscriber -> {
+                    subscriber.onNext("Hello World jx");
+                    subscriber.onCompleted();
                 }
         );
 
@@ -61,12 +58,7 @@ public class RxjavaStudy {
     @Test
     public void test02() {
         Observable.just("Hello World")
-                .subscribe(new Action1<String>() {
-                    @Override
-                    public void call(String s) {
-                        System.out.println(s);
-                    }
-                });
+                .subscribe(s -> System.out.println(s));
     }
 
     @Test
