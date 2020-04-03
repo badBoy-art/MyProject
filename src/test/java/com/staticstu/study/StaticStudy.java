@@ -1,4 +1,4 @@
-package com.stati.study;
+package com.staticstu.study;
 
 import org.junit.Test;
 

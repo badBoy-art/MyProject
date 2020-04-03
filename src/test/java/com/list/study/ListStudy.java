@@ -21,12 +21,7 @@ public class ListStudy {
         lists.add("2");
         System.out.println(lists.size());
 
-        String str = Iterators.find(lists.iterator(), new Predicate<String>() {
-            @Override
-            public boolean apply(@Nullable String input) {
-                return input.equals("3");
-            }
-        });
+        String str = Iterators.find(lists.iterator(), input -> input.equals("3"));
         System.out.println(str);
     }
 }

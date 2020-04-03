@@ -9,6 +9,7 @@ import org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 /**
  * @author xuedui.zhao
  * @create 2019-08-15
+ * 工作流
  */
 public class FlowableStudy {
 
