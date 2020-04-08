@@ -8,6 +8,9 @@ import java.net.URLClassLoader;
 /**
  * @author badBoy
  * @create 2019-10-25
+ * <p>
+ * Class.forName除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块。
+ * 而classloader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容，只有在newInstance才会去执行static块。
  */
 public class ClassLoaderStudy {
 

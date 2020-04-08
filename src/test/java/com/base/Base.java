@@ -24,6 +24,7 @@ public class Base {
     @Test
     public void tsetFilter() {
         List<String> strs = Lists.newArrayList("zhangsan", "lisi", "wangwu");
+        System.out.println(strs.toString());
         System.out.println(strs.stream().filter(s -> !"lisi".equalsIgnoreCase(s)).collect(toList()));
     }
 
@@ -64,6 +65,18 @@ public class Base {
         List<Person> empty = Lists.newArrayList();
         System.out.println(empty.stream()
                 .mapToInt(Person::getAge).summaryStatistics().getSum());
+
+    }
+
+    @Test
+    public void test() {
+        /**
+         * 它就是获取系统属性的
+         */
+        System.out.println(Long.getLong("12"));
+        System.out.println(Long.getLong("idea.test.cyclic.buffer.size"));
+        System.out.println(System.getProperty("idea.test.cyclic.buffer.size"));
+        System.out.println(Long.valueOf("12"));
 
     }
 }
