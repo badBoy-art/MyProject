@@ -184,18 +184,15 @@ public class StringTest {
 
     @Test
     public void test16() {
-        String companyCodes = "yaccbx,tpysz,hxbj,zybxsc,zybxgd,zybxah,tpyxm,jlrs，fbcx";
-
-        // 支持电子的保司为空，不可索要
-        if (StringUtils.isEmpty(companyCodes)) {
-            System.out.println("empty");
-        }
+        String companyCodes = "yaccbx,tpysz,hxbj,zybxsc,zybxgd,zybxah,tpyxm,jlrs，fbcx，";
 
         String[] codes = StringUtils.split(companyCodes, ",，");
         Set<String> codeSet = Sets.newHashSet(codes);
         if (!codeSet.contains("JLRS")) {
             System.out.println("true");
         }
+
+        System.out.println(StringUtils.stripEnd(companyCodes,"，"));
 
     }
 

@@ -32,9 +32,10 @@ public class DateStudy {
 
     @Test
     public void testL() {
-        Instant instant = Instant.ofEpochSecond(1585798418);
+        Instant instant = Instant.ofEpochSecond(1586707199);
         ZoneId zone = ZoneId.systemDefault();
         System.out.println(LocalDateTime.ofInstant(instant, zone));
+        System.out.println(Instant.ofEpochSecond(1586707199).atZone(ZoneOffset.ofHours(8)).toLocalDate());
     }
 
     @Test
