@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
  * @author xuedui.zhao
  * @create 2019-04-19
  *
- * <a href="https://mp.weixin.qq.com/s/zm2kSGTOmukgVmh4E8vbBQ"></a>
  */
 public class ThreadComputeTest {
     Double d = new Double(20);

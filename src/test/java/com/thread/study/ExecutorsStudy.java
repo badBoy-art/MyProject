@@ -1,6 +1,7 @@
 package com.thread.study;
 
 import com.google.common.collect.Lists;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -16,11 +17,13 @@ import java.util.stream.Collectors;
  *
  * @author xuedui.zhao
  * @create 2018-03-31
+ *
+ * <a href="https://mp.weixin.qq.com/s/zm2kSGTOmukgVmh4E8vbBQ"></a>
  */
 public class ExecutorsStudy {
 
     @Test
-    public void testExecutors() throws Exception{
+    public void testExecutors() throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         List<Callable<String>> callables = Arrays.asList(
@@ -32,10 +35,10 @@ public class ExecutorsStudy {
                 .stream().map(future -> {
             try {
                 return future.get();
-            }  catch (Exception e) {
+            } catch (Exception e) {
                 throw new IllegalStateException(e);
             }
-            }).forEach(System.out::println);
+        }).forEach(System.out::println);
 
     }
 
@@ -51,7 +54,7 @@ public class ExecutorsStudy {
         List<String> list1 = list.stream().filter(a -> !"a".equals(a)).collect(Collectors.toList());
         System.out.println(list1);
 
-        List<String> list2 = list1.stream().sorted((a,b) -> b.compareTo(a)).collect(Collectors.toList());
+        List<String> list2 = list1.stream().sorted((a, b) -> b.compareTo(a)).collect(Collectors.toList());
 
         list2.stream().forEach(System.out::println);
 
