@@ -27,6 +27,6 @@ public class Animal {
     String name;
 
     public void say(String voice) {
-        System.out.print(voice);
+        System.out.println(voice);
     }
 }

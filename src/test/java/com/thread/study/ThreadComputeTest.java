@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author xuedui.zhao
  * @create 2019-04-19
+ *
+ * <a href="https://mp.weixin.qq.com/s/zm2kSGTOmukgVmh4E8vbBQ"></a>
  */
 public class ThreadComputeTest {
     Double d = new Double(20);
@@ -95,7 +97,6 @@ public class ThreadComputeTest {
     }
 
 
-
 }
 
 
@@ -103,17 +104,19 @@ class MyTask implements Runnable {
     private int taskNum;
 
     private volatile static MyTask instance;
-    private MyTask (){
+
+    private MyTask() {
     }
+
     public static MyTask getInstance() {
         if (instance != null) {
             return instance;
         }
 
-        if (instance== null) {
+        if (instance == null) {
             synchronized (MyTask.class) {
-                if (instance== null) {
-                    instance= new MyTask();
+                if (instance == null) {
+                    instance = new MyTask();
                 }
             }
         }

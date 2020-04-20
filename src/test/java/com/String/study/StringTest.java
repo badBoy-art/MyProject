@@ -2,6 +2,7 @@ package com.String.study;
 
 import com.Extends.study.Animal;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
@@ -11,12 +12,14 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import javax.annotation.Nullable;
+
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -192,7 +195,7 @@ public class StringTest {
             System.out.println("true");
         }
 
-        System.out.println(StringUtils.stripEnd(companyCodes,"，"));
+        System.out.println(StringUtils.stripEnd(companyCodes, "，"));
 
     }
 
@@ -234,6 +237,12 @@ public class StringTest {
                 .omitEmptyStrings()
                 .split("a;b; ; ; d;"));
         System.out.println(swiftPdfUrls);
+
+        List<String> swiftPdfs = Lists.newArrayList(Splitter.on(CharMatcher.anyOf(";，"))
+                .trimResults()
+                .omitEmptyStrings()
+                .split("a;b; ， ; d;"));
+        System.out.println(swiftPdfs);
     }
 
     public static void main(String[] args) throws Exception {
@@ -450,11 +459,13 @@ public class StringTest {
 
     @Test
     public void test30() {
-        String test1 = "abc"; String test2 = "ab" + "c";
+        String test1 = "abc";
+        String test2 = "ab" + "c";
         System.out.println(test1 == test2);
         System.out.println(test1.equals(test2));
 
-        String test4 = "ab"; String test3 = test4 + "c";
+        String test4 = "ab";
+        String test3 = test4 + "c";
 
         System.out.println(test1 == test3);
         System.out.println(test1.equals(test3));

@@ -10,6 +10,8 @@ import java.util.concurrent.CountDownLatch;
 
 import org.junit.Test;
 
+import net.sf.cglib.core.Local;
+
 /**
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-03-27
@@ -28,6 +30,7 @@ public class DateStudy {
         System.out.println("LocalDate 转 Long: " + localDate.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli());
         System.out.println(LocalDateTime.now().toEpochSecond(ZoneOffset.of("+8")));
         System.out.println(LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli());
+        System.out.println(localDate.equals(LocalDate.of(2020,04,13)));
     }
 
     @Test

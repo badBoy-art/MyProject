@@ -3,6 +3,7 @@ package com.Extends.study;
 import com.google.common.collect.Lists;
 
 import javax.lang.model.element.AnnotationMirror;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +22,28 @@ public class Test {
         lists.add(new Dog());
         lists.add(new WhiteDog());
         //lists.add(new Animal());
-        for (Object dog2: lists) {
-            Dog dog3 =(Dog)dog2;
+        for (Object dog2 : lists) {
+            Dog dog3 = (Dog) dog2;
             dog3.run();
         }
-        System.out.print(8>>2);
+        System.out.print(8 >> 2);
+    }
+
+    @org.junit.Test
+    public void test() {
+        Dog dog = new Dog();
+        Cat cat = (Cat) new Cat().setAa("12").setAge(11);
+
+        say(Lists.newArrayList(dog));
+        say(Lists.newArrayList(cat));
+    }
+
+    public void say(List<Animal> animals) {
+        for (Animal animal :
+                animals) {
+            animal.setName("nae");
+        }
+        System.out.println(animals.toString());
     }
 
     @org.junit.Test
@@ -33,7 +51,7 @@ public class Test {
     public void testExtends() {
         List<? extends Dog> lists = new ArrayList<WhiteDog>();
         //相当于向上转型
-       // Dog dog = lists.get(0);
+        // Dog dog = lists.get(0);
         //相当于向下转型
         //WhiteDog whiteDog = lists.get(0);
         //不知道实例化对象的具体类型，所以不能add
