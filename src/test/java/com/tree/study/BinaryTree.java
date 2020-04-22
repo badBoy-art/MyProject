@@ -7,6 +7,7 @@ import java.util.Stack;
  *
  * @author xuedui.zhao
  * @create 2018-05-10
+ * <a href="https://blog.csdn.net/My_Jobs/article/details/43451187"></a>
  */
 public class BinaryTree {
 
@@ -74,7 +75,7 @@ public class BinaryTree {
 
     public int getMinValue() {
         Node current = root;
-        while(true) {
+        while (true) {
             if (current == null) {
                 return current.value;
             }
@@ -82,6 +83,9 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * 左子树---> 根结点 ---> 右子树
+     */
     //递归中序遍历
     public void inOrderTraverse() {
         System.out.println("中序遍历");
@@ -91,7 +95,7 @@ public class BinaryTree {
 
     public void inOrderTraverse(Node node) {
         if (node == null) {
-            return ;
+            return;
         }
         inOrderTraverse(node.leftChild);
         node.display();
@@ -119,7 +123,9 @@ public class BinaryTree {
         System.out.println();
     }
 
-
+    /**
+     * 根结点 ---> 左子树 ---> 右子树
+     */
     //前序递归遍历
     public void preOrderTraverse() {
         System.out.println("前序遍历:");
@@ -129,7 +135,7 @@ public class BinaryTree {
 
     private void preOrderTraverse(Node node) {
         if (node == null)
-            return ;
+            return;
 
         node.display();
         preOrderTraverse(node.leftChild);
@@ -156,6 +162,9 @@ public class BinaryTree {
         System.out.println();
     }
 
+    /**
+     * 左子树 ---> 右子树 ---> 根结点
+     */
     //后续递归
     public void postOrderTraverse() {
         System.out.println("后序遍历:");
@@ -165,7 +174,7 @@ public class BinaryTree {
 
     private void postOrderTraverse(Node node) {
         if (node == null)
-            return ;
+            return;
 
         postOrderTraverse(node.leftChild);
         postOrderTraverse(node.rightChild);
@@ -199,7 +208,6 @@ public class BinaryTree {
     }
 
     /**
-     *
      * 得到后继节点，即删除节点的左后代
      */
     private Node getSuccessor(Node delNode) {
@@ -258,7 +266,7 @@ public class BinaryTree {
             } else {
                 //如果该叶节点是父节点的左子节点，将父节点的左子节点置为null
                 if (isLeftChild) {
-                    parent.leftChild  = null;
+                    parent.leftChild = null;
                 } else { //如果该叶节点是父节点的右子节点，将父节点的右子节点置为null
                     parent.rightChild = null;
                 }

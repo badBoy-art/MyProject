@@ -2,6 +2,8 @@ package com.thread.study;
 
 import org.junit.Test;
 
+import io.netty.util.concurrent.FastThreadLocal;
+
 /**
  * ThreadLocal学习
  *
@@ -58,5 +60,15 @@ public class ThreadLocalStudy {
                 threadLocalI.remove();
             }
         }, "threadLocal2").start();
+    }
+
+    /**
+     * NettyFastThreadLocal 速度比jdk自带的要快
+     */
+    @Test
+    public void testNettyFastThreadLocal() {
+        FastThreadLocal<String> threadLocal = new FastThreadLocal();
+        threadLocal.set("aaa");
+        System.out.println(threadLocal.get());
     }
 }
