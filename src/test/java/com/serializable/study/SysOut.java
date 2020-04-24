@@ -21,7 +21,7 @@ public class SysOut {
 
         TimeUnit.SECONDS.sleep(1);
         condition = false;
-        System.out.println("main 线程修改了condition变量 改为false" + condition);
+        System.out.println("study.main 线程修改了condition变量 改为false" + condition);
     }
 
 }

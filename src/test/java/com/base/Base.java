@@ -76,6 +76,7 @@ public class Base {
         System.out.println(Long.getLong("12"));
         System.out.println(Long.getLong("idea.test.cyclic.buffer.size"));
         System.out.println(System.getProperty("idea.test.cyclic.buffer.size"));
+        System.out.println(System.getProperties());
         System.out.println(Long.valueOf("12"));
 
     }

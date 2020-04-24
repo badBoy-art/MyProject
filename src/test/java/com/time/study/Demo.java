@@ -28,7 +28,7 @@ public class Demo {
 
     @Test
     public void testTimerTask() throws InterruptedException {
-        System.out.println("main start:"+getCurrentTime());
+        System.out.println("study.main start:"+getCurrentTime());
         startTimer();
     }
 

@@ -57,7 +57,7 @@ public class MyClassLoader extends ClassLoader {
     @Test
     public void test() {
         MyClassLoader classLoader = new MyClassLoader();
-        classLoader.setRoot("/Users/xuedui.zhao/Projects/myProject/src/main/java");
+        classLoader.setRoot("/Users/xuedui.zhao/Projects/myProject/src/study.main/java");
 
         Class<?> testClass = null;
         try {

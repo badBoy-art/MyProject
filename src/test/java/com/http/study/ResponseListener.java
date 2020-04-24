@@ -13,7 +13,7 @@ public interface ResponseListener {
     void onSuccess(Response response);
 
     /**
-     * Method invoked if the request failed. There are two main categories of failures: connection failures (usually
+     * Method invoked if the request failed. There are two study.main categories of failures: connection failures (usually
      * {@link java.io.IOException}s, or responses that were treated as errors based on their error response code
      * ({@link ResponseException}s).
      */

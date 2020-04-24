@@ -97,7 +97,7 @@ void mySubTask() throws InterruptedException {
 class Example2 extends Thread {
     volatile boolean stop = false;// 线程中断信号量
 
-    public static void main(String args[]) throws Exception {
+    public static void study.main(String args[]) throws Exception {
         Example2 thread = new Example2();
         System.out.println("Starting thread...");
         thread.start();
@@ -131,7 +131,7 @@ class Example2 extends Thread {
 
 
 class Example2 extends Thread {
-    public static void main(String args[]) throws Exception {
+    public static void study.main(String args[]) throws Exception {
         Example2 thread = new Example2();
         System.out.println("Starting thread...");
         thread.start();
@@ -168,7 +168,7 @@ Thread.interrupt()方法不会中断一个正在运行的线程。这一方法�
 并且中断状态也将被清除，这样线程就得以退出阻塞的状态。下面是具体实现：
 
 class Example3 extends Thread {
-    public static void main(String args[]) throws Exception {
+    public static void study.main(String args[]) throws Exception {
         Example3 thread = new Example3();
         System.out.println("Starting thread...");
         thread.start();
@@ -213,7 +213,7 @@ class Example3 extends Thread {
 Example4试着去中断处于死锁状态的两个线程，但这两个线都没有收到任何中断信号（抛出异常），所以interrupt()方法是不能中断死锁线程的，因为锁定的位置根本无法抛出异常：
 
 class Example4 extends Thread {
-    public static void main(String args[]) throws Exception {
+    public static void study.main(String args[]) throws Exception {
         final Object lock1 = new Object();
         final Object lock2 = new Object();
         Thread thread1 = new Thread() {
@@ -279,7 +279,7 @@ socketChannel.open、socketChannel.read、socketChannel.write、fileChannel.read
 class Example6 extends Thread {
     volatile ServerSocket socket;
 
-    public static void main(String args[]) throws Exception {
+    public static void study.main(String args[]) throws Exception {
         Example6 thread = new Example6();
         System.out.println("Starting thread...");
         thread.start();

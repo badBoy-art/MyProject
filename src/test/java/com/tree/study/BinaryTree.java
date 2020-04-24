@@ -1,5 +1,6 @@
 package com.tree.study;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -142,6 +143,14 @@ public class BinaryTree {
         preOrderTraverse(node.rightChild);
     }
 
+    /**
+     * 对于任意结点node，第一部分即直接访问之，之后在判断左子树是否为空，不为空时即重复上面的步骤，直到其为空。若为空，则需要访问右子树。
+     * 注意，在访问过左孩子之后，需要反过来访问其右孩子，所以，需要栈这种数据结构的支持。对于任意一个结点node，具体步骤如下：
+     * <p>
+     * a)访问之，并把结点node入栈，当前结点置为左孩子；
+     * b)判断结点node是否为空，若为空，则取出栈顶结点并出栈，将右孩子置为当前结点；
+     * 否则重复a)步直到当前结点为空或者栈为空（可以发现栈中的结点就是为了访问右孩子才存储的）
+     */
     //前序非递归
     public void preOrderByStack() {
         System.out.println("前序非递归遍历:");
@@ -181,7 +190,6 @@ public class BinaryTree {
         node.display();
     }
 
-
     //后续非递归遍历
     public void postOrderByStack() {
         System.out.println("后序非递归遍历:");
@@ -205,6 +213,27 @@ public class BinaryTree {
             }
         }
         System.out.println();
+    }
+
+    /**
+     * 层级遍历
+     *
+     * @param
+     */
+    public void levelTraverse() {
+        System.out.println("层级遍历");
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            Node node = queue.poll();
+            node.display();
+            if (node.leftChild != null) {
+                queue.offer(node.leftChild);
+            }
+            if (node.rightChild != null) {
+                queue.offer(node.rightChild);
+            }
+        }
     }
 
     /**

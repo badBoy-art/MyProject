@@ -19,6 +19,7 @@ public class TestBinaryTree {
         binaryTree.insert(20);
         binaryTree.preOrderTraverse();
         binaryTree.postOrderTraverse();
+        binaryTree.levelTraverse();
         binaryTree.inOrderTraverse();
         binaryTree.delete(15);
         binaryTree.postOrderTraverse();

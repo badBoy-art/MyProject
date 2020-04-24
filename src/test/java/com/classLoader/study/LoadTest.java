@@ -12,7 +12,7 @@ public class LoadTest {
 
     @Test
     public void test1() {
-        print("inside main");
+        print("inside study.main");
         new Panda();
         print("After creating Panda");
         //加载Lion

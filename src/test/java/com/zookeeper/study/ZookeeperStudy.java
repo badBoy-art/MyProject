@@ -12,13 +12,15 @@ import org.junit.Test;
  *
  * @author xuedui.zhao
  * @create 2018-05-07
+ *
+ * <a href="https://mp.weixin.qq.com/s/vZOVlKCuT9IzTgJmLxueIQ"></a>
  */
 public class ZookeeperStudy {
 
     @Test
-    public void testCurator() throws Exception{
+    public void testCurator() throws Exception {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-        CuratorFramework client = CuratorFrameworkFactory.newClient("localhost:2181",2000,2000, retryPolicy);
+        CuratorFramework client = CuratorFrameworkFactory.newClient("localhost:2181", 2000, 2000, retryPolicy);
         client.start();
         CuratorFrameworkState state = client.getState();
         client.create().forPath("/zookeeper/data");

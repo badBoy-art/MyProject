@@ -24,7 +24,7 @@ public class Example5 extends Thread {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
-            System.out.println("main InterruptedException");
+            System.out.println("study.main InterruptedException");
         }
         System.out.println("Stopping application...");
     }

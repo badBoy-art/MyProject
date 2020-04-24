@@ -17,7 +17,7 @@ public class MutableSingletonCompleteTest {
         timer.schedule(new TimerTask() {
             public void run() {
                 MutableSingletonComplete.getInstance().setSomeFlag(true);
-                System.out.println("Timer interrupted main thread ...");
+                System.out.println("Timer interrupted study.main thread ...");
                 timer.cancel();
             }
         }, 1000);

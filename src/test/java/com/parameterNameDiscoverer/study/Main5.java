@@ -19,7 +19,7 @@
 // */
 //public class Main5 {
 //
-//    public static void main(String[] args) throws Exception {
+//    public static void study.main(String[] args) throws Exception {
 //        Method method = Main3.class.getDeclaredMethod("testArgName", String.class, Integer.class);
 //        String[] methodParamNames = getMethodParamNames(method);
 //
