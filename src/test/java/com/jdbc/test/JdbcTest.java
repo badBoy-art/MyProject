@@ -2,6 +2,7 @@ package com.jdbc.test;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -13,6 +14,8 @@ import java.sql.Statement;
 /**
  * @author xuedui.zhao
  * @create 2019-04-20
+ * <p>
+ * SQL 的解析: Apache Calcite
  */
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration({"/spring.xml"})

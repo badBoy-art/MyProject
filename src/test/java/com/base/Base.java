@@ -80,4 +80,10 @@ public class Base {
         System.out.println(Long.valueOf("12"));
 
     }
+
+    @Test
+    public void testClassName() {
+        System.out.println(getClass().getName());
+        System.out.println(getClass().getSimpleName());
+    }
 }

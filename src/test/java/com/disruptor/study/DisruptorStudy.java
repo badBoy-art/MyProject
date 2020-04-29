@@ -2,6 +2,7 @@ package com.disruptor.study;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
+
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
@@ -24,6 +25,8 @@ import java.util.concurrent.Executors;
  * <p>
  * 如何防止读取的时候，读到还未写的元素。Disruptor在多个生产者的情况下，引入了一个与Ring Buffer大小相同的buffer：available Buffer。
  * 当某个位置写入成功的时候，便把availble Buffer相应的位置置位，标记为写入成功。读取的时候，会遍历available Buffer，来判断元素是否已经就绪
+ *
+ * <a href="http://ifeve.com/disruptor-cacheline-padding/"></a>
  *
  * @author xuedui.zhao
  * @create 2019-05-15

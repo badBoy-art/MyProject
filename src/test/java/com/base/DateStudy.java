@@ -10,8 +10,6 @@ import java.util.concurrent.CountDownLatch;
 
 import org.junit.Test;
 
-import net.sf.cglib.core.Local;
-
 /**
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-03-27
@@ -41,6 +39,10 @@ public class DateStudy {
         System.out.println(Instant.ofEpochSecond(1586707199).atZone(ZoneOffset.ofHours(8)).toLocalDate());
     }
 
+    /**
+     * nanoTime()返回最准确的可用系统计时器的当前值，以毫微秒为单位
+     * @throws InterruptedException
+     */
     @Test
     public void testSysTimes() throws InterruptedException {
         long beginTime = System.nanoTime();
