@@ -31,7 +31,7 @@ public class JdbcTest {
     private String USER = "root";
 
     //@Value("${jdbc.password}")
-    private String PASS = "123456";
+    private String PASS = "zhaoZ1230";
 
     @Test
     public void testJdbc() {
