@@ -7,8 +7,6 @@ import com.github.jasync.r2dbc.mysql.JasyncConnectionFactory;
 import com.github.jasync.sql.db.Configuration;
 import com.github.jasync.sql.db.mysql.pool.MySQLConnectionFactory;
 
-import io.r2dbc.postgresql.PostgresqlConnectionConfiguration;
-import io.r2dbc.postgresql.PostgresqlConnectionFactory;
 import io.r2dbc.spi.ConnectionFactory;
 import reactor.core.publisher.Flux;
 
@@ -27,7 +25,7 @@ public class R2dbcTest {
 
         DatabaseClient databaseClient = DatabaseClient.create(connectionFactory);
 
-        Flux<Order> rows = databaseClient.execute("select id, order_id, amount, create_time from `order`")
+        Flux<Order> rows = databaseClient.execute("select id, order_id orderId, amount, create_time createTime from `order`")
                 .as(Order.class)
                 .fetch().all();
 
