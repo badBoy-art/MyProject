@@ -8,7 +8,9 @@ import java.security.AccessControlException;
 /**
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-04-06
- * @Description
+ * <p>
+ * 不论本地代码或是远程代码，都会按照用户的安全策略设定，由类加载器加载到虚拟机中权限不同的运行空间，来实现差异化的代码执行权限控制
+ * @Description <a href="https://www.ibm.com/developerworks/cn/java/j-lo-javasecurity/index.html"></a>
  */
 public class TestStudy {
 

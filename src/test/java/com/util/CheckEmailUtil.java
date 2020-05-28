@@ -13,11 +13,11 @@ import java.util.regex.Pattern;
  * @create 2018-09-25
  */
 public class CheckEmailUtil {
-    
+
     private static Logger logger = LoggerFactory.getLogger(CheckEmailUtil.class);
-    
+
     private static String check = "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$";
-    
+
     @Test
     public void checkEmail() {
         String email = "375975033@qq._com";
@@ -31,7 +31,7 @@ public class CheckEmailUtil {
             logger.error("验证邮箱地址错误", e);
             flag = false;
         }
-        
+
         Assert.assertTrue(flag);
     }
 }

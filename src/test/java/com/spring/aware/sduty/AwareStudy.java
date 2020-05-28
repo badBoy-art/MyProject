@@ -17,6 +17,15 @@ package com.spring.aware.sduty;
  * ServletContextAware：获取ServletContext
  * ApplicationEventPublisher：拿到事件发布器
  * ————————————————
+ * setBeanName
+ * setBeanFactory
+ * setApplicationContext
+ * postProcessBeforeInitialization
+ * PostConstruct
+ * afterPropertiesSet
+ * init-method
+ * postProcessBeanFactory
+ * postProcessAfterInitialization
  *
  * @author xuedui.zhao
  * @create 2019-08-19
