@@ -12,6 +12,7 @@ import java.util.TreeSet;
 /**
  * @author badBoy
  * @create 2019-11-21
+ * 一致性hash
  */
 public class ConsistentHash<T> {
     private final int numberOfReplicas; // 节点的复制因子,实际节点个数 * numberOfReplicas =
