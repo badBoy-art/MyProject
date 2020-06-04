@@ -7,7 +7,8 @@ package com.staticstu.study;
 public class Super {
 
     public static int m = 11;
-    static{
-        System.out.println("执行了super类静态语句块");
+
+    static {
+        System.out.println("执行了super类静态语句块 m = " + m);
     }
 }

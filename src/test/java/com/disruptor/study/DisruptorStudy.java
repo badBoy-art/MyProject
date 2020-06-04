@@ -1,13 +1,16 @@
 package com.disruptor.study;
 
+import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
+import com.lmax.disruptor.dsl.ProducerType;
 
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * Disruptor通过以下设计来解决队列速度慢的问题： - 环形数组结构
@@ -35,31 +38,36 @@ public class DisruptorStudy {
 
     @Test
     public void test() throws Exception {
+        // 生产者的线程工厂
+        ThreadFactory threadFactory = new ThreadFactory() {
+            int i = 0;
 
-        // Executor that will be used to construct new threads for consumers
-        Executor executor = Executors.newCachedThreadPool();
+            @Override
+            public Thread newThread(Runnable r) {
+                return new Thread(r, "simpleThread" + String.valueOf(i++));
+            }
+        };
         // The factory for the event
         LongEventFactory factory = new LongEventFactory();
         // Specify the size of the ring buffer, must be power of 2.
         int bufferSize = 1024;
+        // 阻塞策略
+        BlockingWaitStrategy strategy = new BlockingWaitStrategy();
         // Construct the Disruptor
-        Disruptor<LongEvent> disruptor = new Disruptor<LongEvent>(factory, bufferSize, executor);
+        Disruptor<LongEvent> disruptor = new Disruptor<LongEvent>(factory, bufferSize, threadFactory
+                , ProducerType.SINGLE, strategy);
         // Connect the handler
         disruptor.handleEventsWith(new LongEventHandler());
         // Start the Disruptor, starts all threads running
         disruptor.start();
         // Get the ring buffer from the Disruptor to be used for publishing.
         RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
-
         LongEventProducer producer = new LongEventProducer(ringBuffer);
-
         ByteBuffer bb = ByteBuffer.allocate(8);
         for (long l = 0; true; l++) {
             bb.putLong(0, l);
             producer.onData(bb);
             Thread.sleep(1000);
         }
-
     }
-
 }
