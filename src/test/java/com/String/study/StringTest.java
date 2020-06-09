@@ -19,6 +19,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import javax.annotation.Nullable;
+import javax.xml.bind.SchemaOutputResolver;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
@@ -469,6 +470,15 @@ public class StringTest {
 
         System.out.println(test1 == test3);
         System.out.println(test1.equals(test3));
+    }
+
+    @Test
+    public void test31() {
+        String SEPARATOR = "_";
+        String WHOLE_NATION_PREFIX = Joiner.on(SEPARATOR).join("whole", "nation");
+        String WHOLE_NATION = Joiner.on(SEPARATOR).join(WHOLE_NATION_PREFIX, "%s");
+        System.out.println(WHOLE_NATION_PREFIX);
+        System.out.println(WHOLE_NATION);
     }
 
 }

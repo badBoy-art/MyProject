@@ -37,6 +37,7 @@ public class CompletableFutureStudy {
             //这里把你信任的结果set进去后，所有阻塞的get()方法都能立马苏醒，获得到结果
             completableFuture.complete("ok");
         }).start();
+
         // 获取任务结果，如果没有完成会一直阻塞等待
         System.out.println("准备打印结果...");
         String result = completableFuture.get();
@@ -53,8 +54,8 @@ public class CompletableFutureStudy {
                 try {
                     Thread.sleep(3000);
                     System.out.println(1 / 0);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } catch (Exception e) {
+                    System.out.println("InterruptedException");
                     completableFuture.completeExceptionally(e);
                 }
                 completableFuture.complete("ok");
@@ -64,9 +65,9 @@ public class CompletableFutureStudy {
             String result = completableFuture.get();
             System.out.println("计算结果:" + result);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("InterruptedException");
         } catch (ExecutionException e) {
-            e.printStackTrace();
+            System.out.println("ExecutionException");
         }
     }
 
