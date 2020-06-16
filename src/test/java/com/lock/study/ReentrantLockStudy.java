@@ -2,6 +2,7 @@ package com.lock.study;
 
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
@@ -69,5 +70,35 @@ public class ReentrantLockStudy {
         LockSupport.park();
         System.out.println("over");
     }
+
+    @Test
+    public void test02() {
+        get();
+        new Thread(() -> {
+            lock.lock();
+            try {
+                if (oddcondition != null) {
+                    System.out.println("signal");
+                    oddcondition.signal();
+                }
+            } finally {
+                lock.unlock();
+            }
+        }).start();
+
+    }
+
+    public void get() {
+        lock.lock();
+        try {
+            oddcondition.await(5000, TimeUnit.MILLISECONDS);
+            System.out.println("oddcondition_await");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            lock.unlock();
+        }
+    }
+
 
 }

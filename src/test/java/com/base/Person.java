@@ -1,5 +1,7 @@
 package com.base;
 
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,4 +16,5 @@ public class Person {
     private String name;
     private int age;
     private String address;
+    private List<String> hobbits;
 }

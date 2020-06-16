@@ -4,7 +4,9 @@ import static java.util.stream.Collectors.toList;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -33,15 +35,21 @@ public class Base {
         List<Person> allPerson = Lists.newArrayList(Person.builder()
                         .address("beijing")
                         .age(10)
-                        .name("zs").build(),
+                        .name("zs")
+                        .hobbits(Lists.newArrayList("1", "2"))
+                        .build(),
                 Person.builder()
                         .address("beijing")
                         .age(11)
-                        .name("ls").build(),
+                        .name("ls")
+                        .hobbits(Lists.newArrayList("3", "4"))
+                        .build(),
                 Person.builder()
                         .address("beijing")
                         .age(10)
-                        .name("ww").build());
+                        .name("ww")
+                        .hobbits(Lists.newArrayList("5", "6"))
+                        .build());
 
         List<Person> persons = Lists.newArrayList(
                 Person.builder()
@@ -52,6 +60,12 @@ public class Base {
                         .address("beijing")
                         .age(10)
                         .name("ww").build());
+
+        List<String> hobbits = allPerson.stream()
+                .flatMap(x -> x.getHobbits().stream())
+                .collect(Collectors.toList());
+
+        System.out.println(hobbits);
 
         allPerson.removeAll(persons);
         System.out.println(allPerson);
@@ -86,5 +100,49 @@ public class Base {
     public void testClassName() {
         System.out.println(getClass().getName());
         System.out.println(getClass().getSimpleName());
+    }
+
+    @Test
+    public void test0x7fff() {
+        System.out.println(0x7fff);
+    }
+
+    @Test
+    public void test_() {
+        int a = 10;
+        /**
+         * a++ 分为三个阶段
+         * 1、内存到寄存器
+         * 2、寄存器自增
+         * 3、写回内存
+         * 这三个阶段中间都可以被中断分离开
+         */
+        int b = a++;
+        int c = a + 1;
+        System.out.println("a = " + a + " b = " + b + " c = " + c);
+    }
+
+    @Test
+    public void testCollection() {
+        List<Person> list = Lists.newArrayList(Person.builder()
+                        .address("beijing")
+                        .age(12)
+                        .name("zs")
+                        .hobbits(Lists.newArrayList("1", "2"))
+                        .build(),
+                Person.builder()
+                        .address("beijing")
+                        .age(11)
+                        .name("ls")
+                        .hobbits(Lists.newArrayList("3", "4"))
+                        .build(),
+                Person.builder()
+                        .address("beijing")
+                        .age(10)
+                        .name("ww")
+                        .hobbits(Lists.newArrayList("5", "6"))
+                        .build());
+
+        System.out.println(list.stream().sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList()));
     }
 }

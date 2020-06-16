@@ -29,6 +29,13 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j -->
+        <dependency>
+            <groupId>org.locationtech.spatial4j</groupId>
+            <artifactId>spatial4j</artifactId>
+            <version>0.7</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/io.r2dbc/r2dbc-postgresql -->
         <dependency>
             <groupId>io.r2dbc</groupId>

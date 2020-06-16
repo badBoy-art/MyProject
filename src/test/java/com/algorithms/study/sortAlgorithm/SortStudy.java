@@ -3,7 +3,12 @@ package com.algorithms.study.sortAlgorithm;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveTask;
+
+import com.sun.tools.corba.se.idl.SymtabEntry;
 
 /**
  * https://mp.weixin.qq.com/s/Qf416rfT4pwURpW3aDHuCg
@@ -13,7 +18,13 @@ import java.util.Collections;
  */
 public class SortStudy {
 
-    int[] arr = new int[]{9, 8, 6, 4, 3, 7, 5, 2, 15, 23, 155};
+    public static int[] arr = new int[10000000];
+
+    static {
+        for (int i = 0; i < 10000000; i++) {
+            arr[i] = (int) (Math.random() * 100000000);
+        }
+    }
 
     /**
      * 冒泡排序
@@ -217,10 +228,56 @@ public class SortStudy {
 
     @Test
     public void testMergeSort() {
+        Long startTime = System.nanoTime();
         mergeSort(arr);
+        System.out.println(System.nanoTime() - startTime);
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print(arr[i] + " ");
+//        }
+
+        System.out.println();
+        Long startTime2 = System.nanoTime();
+        ForkJoinPool forkJoinPool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
+        MergeSort mergeSort = new MergeSort(arr);
+        arr = forkJoinPool.invoke(mergeSort);
+        System.out.println("forkJoin = " + (System.nanoTime() - startTime2));
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+    }
+
+    /**
+     * fork/join
+     * 耗时：13903ms
+     */
+    class MergeSort extends RecursiveTask<int[]> {
+        int[] arrs;
+        public MergeSort(int[] arrs) {
+            this.arrs = arrs;
+        }
+        @Override
+        protected int[] compute() {
+            if (arrs.length < 2) return arrs;
+            int mid = arrs.length / 2;
+            MergeSort left = new MergeSort(Arrays.copyOfRange(arrs, 0, mid));
+            left.fork();
+            MergeSort right = new MergeSort(Arrays.copyOfRange(arrs, mid, arrs.length));
+            return merge(right.compute(), left.join());
+        }
+    }
+
+    public static int[] merge(int[] left, int[] right) {
+        int[] result = new int[left.length + right.length];
+        for (int i = 0, m = 0, j = 0; m < result.length; m++) {
+            if (i >= left.length) {
+                result[m] = right[j++];
+            } else if (j >= right.length) {
+                result[m] = left[i++];
+            } else if (left[i] > right[j]) {
+                result[m] = right[j++];
+            } else result[m] = left[i++];
+        }
+        return result;
     }
 
     /**
