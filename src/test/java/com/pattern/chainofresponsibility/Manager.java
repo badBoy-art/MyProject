@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-06-16
- * @Description
+ * @Description Director
  */
 public class Manager extends Handler {
 
