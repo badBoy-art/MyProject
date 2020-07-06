@@ -1,7 +1,5 @@
 package com.completablefuture.study;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -11,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
-import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
+import org.junit.Test;
 
 /**
  * 时间通知 类似于guava ListenableFuture
@@ -261,5 +259,27 @@ public class CompletableFutureStudy {
             u.sleep(t);
         } catch (InterruptedException e) {
         }
+    }
+
+    @Test
+    public void test() {
+        long start = System.nanoTime();
+        System.out.println("T1:洗水壶...");
+        sleep(1, TimeUnit.SECONDS);
+
+        System.out.println("T1:烧开水...");
+        sleep(15, TimeUnit.SECONDS);
+        System.out.println("T2:洗茶壶...");
+        sleep(1, TimeUnit.SECONDS);
+
+        System.out.println("T2:洗茶杯...");
+        sleep(2, TimeUnit.SECONDS);
+
+        System.out.println("T2:拿茶叶...");
+        sleep(1, TimeUnit.SECONDS);
+        System.out.println("T1:拿到茶叶:");
+        System.out.println("T1:泡茶...");
+
+        System.out.println(System.nanoTime() - start);
     }
 }

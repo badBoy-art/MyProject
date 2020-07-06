@@ -1,5 +1,7 @@
 https://mp.weixin.qq.com/s/fVQZ0u6JNJ05-Dyox_lgrg
 
+aqs详解: https://mp.weixin.qq.com/s?__biz=Mzg3NjIxMjA1Ng==&mid=2247484548&idx=1&sn=c4537d5fa53d5c60f5881a814f56dfa3&chksm=cf34feb3f84377a5fc1b57df154692fc742ded4b814b81c11e8d42d4bb2e32d64c0756825f2d&scene=21#wechat_redirect
+
 synchronized和lock的区别：
 来源：
 * lock是一个接口，而synchronized是java的一个关键字，synchronized是内置的语言实现；

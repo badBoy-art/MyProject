@@ -2,18 +2,13 @@ package com.base;
 
 import static java.util.stream.Collectors.toList;
 
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Range;
 
 
 /**
@@ -145,4 +140,19 @@ public class Base {
 
         System.out.println(list.stream().sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList()));
     }
+
+    @Test
+    public void testGeneric() {
+        OptionManager manager = new OptionManager();
+    }
+
+    @Test
+    public void testSet() {
+        int a = 3;
+
+        int b = a = 4;
+
+        System.out.println("a = " + a + ", b = " + b);
+    }
+
 }

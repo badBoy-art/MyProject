@@ -19,4 +19,13 @@ public enum SexEnum {
     int code;
     String desc;
 
+    public static SexEnum codeOf(int code) {
+        for (SexEnum sexEnum: SexEnum.values()) {
+            if (code == sexEnum.code){
+                return sexEnum;
+            }
+        }
+        return SexEnum.man;
+    }
+
 }

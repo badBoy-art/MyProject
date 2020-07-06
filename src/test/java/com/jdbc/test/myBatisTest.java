@@ -1,8 +1,11 @@
 package com.jdbc.test;
 
-import com.github.pagehelper.PageHelper;
-import com.google.common.collect.Lists;
-import com.jdbc.test.mapper.UserMapper;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -12,10 +15,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.annotation.Resource;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
+import com.github.pagehelper.PageHelper;
+import com.google.common.collect.Lists;
+import com.jdbc.test.mapper.UserMapper;
 
 /**
  * @author xuedui.zhao
@@ -112,7 +114,7 @@ public class myBatisTest {
         System.out.println(user);
         //System.out.println(users);
         //userMapper.updateUser(1, true, "  ");
-        System.out.println(userMapper.getAll());
+        //System.out.println(userMapper.getAll());
     }
 
     @Test

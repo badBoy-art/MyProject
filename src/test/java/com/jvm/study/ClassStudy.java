@@ -1,9 +1,11 @@
 package com.jvm.study;
 
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.info.GraphLayout;
+
 import sun.misc.VMSupport;
 
 import java.lang.management.ManagementFactory;
@@ -39,7 +41,7 @@ public class ClassStudy {
     @Test
     public void test05() {
         int size = 4;
-        System.out.println(size >>>1);
+        System.out.println(size >>> 1);
         System.out.println(size + (size >>> 1) + 1);
     }
 
@@ -78,4 +80,25 @@ public class ClassStudy {
         LockSupport.parkNanos(3000);
         System.out.println(System.getSecurityManager());
     }
+
+    @Test
+    public void test06() {
+        //isInterrupted() interrupted() 执行不到最后  会卡在LockSupport.park(this)
+        Thread.currentThread().isInterrupted();
+        //Thread.currentThread() 程序可执行到左后
+        Thread.currentThread().interrupt();
+
+        System.out.println("int = " + Thread.currentThread().isInterrupted());
+
+        LockSupport.park(this);
+        // 根据 park 方法 API描述，程序在下述三种情况会继续向下执行
+        //  1. 被 unpark
+        //  2. 被中断(interrupt)
+        //  3. 其他不合逻辑的返回才会继续向下执行
+
+        // 因上述三种情况程序执行至此，返回当前线程的中断状态，并清空中断状态
+        // 如果由于被中断，该方法会返回 true
+        System.out.println(Thread.currentThread().isInterrupted());
+    }
+
 }

@@ -1,9 +1,10 @@
 package com.syncandvolatile.study;
 
-import lombok.Synchronized;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import kotlin.jvm.Synchronized;
 
 /**
  * sync学习
