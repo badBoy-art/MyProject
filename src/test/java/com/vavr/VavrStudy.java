@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.math.BigInteger;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 
@@ -23,8 +24,10 @@ import io.vavr.Value;
 import io.vavr.collection.List;
 import io.vavr.collection.Map;
 import io.vavr.collection.Stream;
+import io.vavr.concurrent.Future;
 import io.vavr.control.Either;
 import io.vavr.control.Option;
+import io.vavr.control.Try;
 
 
 /**
@@ -107,7 +110,8 @@ public class VavrStudy {
     }
 
     /**
-     * function3, 在第一次的 curried 方法调用得到 Function1 之后, 通过 apply 来为第一个参数应用值. 以此类推, 通过 3 次的 curried 和 apply 调用, 把全部 3 个参数都应用值
+     * function3, 在第一次的 curried 方法调用得到 Function1 之后, 通过 apply 来为第一个参数应用值.
+     * 以此类推, 通过 3 次的 curried 和 apply 调用, 把全部 3 个参数都应用值
      */
     @Test
     public void testCurried() {
@@ -177,6 +181,23 @@ public class VavrStudy {
                 .zip(List.of("a", "b"))
                 .toList();
         System.out.println(tuple2List);
+    }
+
+    @Test
+    public void testFuture() {
+        System.out.println("当前线程名称：" + Thread.currentThread().getName());
+        Integer result = Future.of(() -> {
+            System.out.println("future线程名称：" + Thread.currentThread().getName());
+            Thread.sleep(2000);
+            return 100;
+        })
+                .map(i -> i * 10)
+                .await(3000, TimeUnit.MILLISECONDS) //等待线程执行3000毫秒
+                .onFailure(e -> e.printStackTrace())
+                .getValue() //返回Optional<Try<Integer>>类型结果
+                .getOrElse(Try.of(() -> 100)) //如果Option 为 empty时，则返回Try(100)
+                .get();
+        System.out.println(result); // 1000
     }
 
 }
