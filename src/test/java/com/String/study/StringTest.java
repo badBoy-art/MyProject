@@ -1,5 +1,23 @@
 package com.String.study;
 
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Pattern;
+
+import javax.annotation.Nullable;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
+
 import com.Extends.study.Animal;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.CharMatcher;
@@ -12,25 +30,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.commons.lang3.time.DateUtils;
-import org.junit.Test;
-
-import javax.annotation.Nullable;
-import javax.xml.bind.SchemaOutputResolver;
-
-import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.regex.Pattern;
 
 /**
  * @author xuedui.zhao
@@ -475,7 +474,7 @@ public class StringTest {
     @Test
     public void test31() {
         String SEPARATOR = "_";
-        String WHOLE_NATION_PREFIX = Joiner.on(SEPARATOR).join("whole", "nation");
+        String WHOLE_NATION_PREFIX = Joiner.on(SEPARATOR).join(Collections.singleton("nation"));
         String WHOLE_NATION = Joiner.on(SEPARATOR).join(WHOLE_NATION_PREFIX, "%s");
         System.out.println(WHOLE_NATION_PREFIX);
         System.out.println(WHOLE_NATION);

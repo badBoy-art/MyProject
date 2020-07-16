@@ -155,4 +155,15 @@ public class Base {
         System.out.println("a = " + a + ", b = " + b);
     }
 
+    @Test
+    public void test1() {
+        System.out.println(69037971 & 31);
+        System.out.println(~4 + 1);
+    }
+
+    @Test
+    public void test07() {
+        System.out.println((1 << 5) - 1);
+    }
+
 }

@@ -1,16 +1,15 @@
 package com.jvm.study;
 
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+import java.lang.management.ManagementFactory;
+import java.util.List;
+import java.util.concurrent.locks.LockSupport;
 
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.info.GraphLayout;
 
+import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import sun.misc.VMSupport;
-
-import java.lang.management.ManagementFactory;
-import java.util.List;
-import java.util.concurrent.locks.LockSupport;
 
 /**
  * @author badBoy

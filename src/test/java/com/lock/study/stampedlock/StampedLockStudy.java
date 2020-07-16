@@ -5,6 +5,8 @@ import java.util.concurrent.locks.StampedLock;
 import org.junit.Test;
 
 /**
+ * StampedLock：不可重入锁
+ *
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-06-08
  * @Description
