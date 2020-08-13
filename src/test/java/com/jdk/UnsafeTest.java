@@ -8,7 +8,7 @@ import org.junit.Test;
 import sun.misc.Unsafe;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-02-26
  * @Description <href a="https://tech.meituan.com/2019/02/14/talk-about-java-magic-class-unsafe.html"></href>
  */

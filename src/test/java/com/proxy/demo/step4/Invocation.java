@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-07-02
  * @Description
  */

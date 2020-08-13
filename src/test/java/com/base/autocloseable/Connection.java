@@ -1,7 +1,7 @@
 package com.base.autocloseable;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-05-29
  * @Description
  */

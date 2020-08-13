@@ -7,7 +7,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-04-06
  * @Description <a href="https://www.jianshu.com/p/81985bc2bfa3"></a>
  * <p>

@@ -4,7 +4,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-06-17
  * @Description
  */

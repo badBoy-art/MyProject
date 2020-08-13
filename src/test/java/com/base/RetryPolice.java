@@ -7,7 +7,7 @@ import javax.annotation.Nonnegative;
 import com.github.phantomthief.scope.RetryPolicy;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-06-05
  * @Description
  */

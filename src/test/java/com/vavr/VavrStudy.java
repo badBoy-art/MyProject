@@ -35,7 +35,7 @@ import io.vavr.control.Try;
 
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-07-06
  * @Description
  */

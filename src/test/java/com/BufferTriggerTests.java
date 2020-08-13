@@ -12,7 +12,7 @@ import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.Multiset;
 
 /**
- * @author yourname <yourname@kuaishou.com>
+ * @author yourname <yourname>
  * Created on 2020-01-03
  */
 public class BufferTriggerTests {

@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-03-27
  * @Description
  */

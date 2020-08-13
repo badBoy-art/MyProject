@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.Extends.study.Dog;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui>
  * Created on 2020-05-29
  * @Description <a href="https://juejin.im/entry/57f73e81bf22ec00647dacd0"></a>
  */
