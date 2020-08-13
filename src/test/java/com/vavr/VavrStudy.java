@@ -10,8 +10,12 @@ import static org.junit.Assert.assertTrue;
 import java.math.BigInteger;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 import org.junit.Test;
+
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 
 import io.vavr.Function1;
 import io.vavr.Function2;
@@ -198,6 +202,15 @@ public class VavrStudy {
                 .getOrElse(Try.of(() -> 100)) //如果Option 为 empty时，则返回Try(100)
                 .get();
         System.out.println(result); // 1000
+    }
+
+    @Test
+    public void testClosed() {
+        final java.util.List<String> VISIT_KEYS_PREFIX = Lists.newArrayListWithCapacity(31 + 1);
+        IntStream.rangeClosed(0, 31).forEach(number -> VISIT_KEYS_PREFIX.add(Joiner.on("-")
+                .join("key", number)));
+
+        VISIT_KEYS_PREFIX.stream().forEach(a -> System.out.println(a));
     }
 
 }

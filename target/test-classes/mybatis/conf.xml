@@ -11,6 +11,7 @@
 
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageHelper"/>
+        <plugin interceptor="com.jdbc.test.mybatis.SensitivePlugin"/>
     </plugins>
 
     <!--<environments default="development">-->

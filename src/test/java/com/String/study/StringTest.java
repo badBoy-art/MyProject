@@ -2,6 +2,7 @@ package com.String.study;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -95,6 +96,9 @@ public class StringTest {
 
         System.out.println(DateFormatUtils.format(new Date(System.currentTimeMillis()), "yyyy-MM-dd"));
         System.out.println(DateFormatUtils.format(DateUtils.addDays(new Date(), 1), "yyyy-MM-dd"));
+
+        System.out.println(
+         LocalDate.of(2020,8,20).toEpochDay());
     }
 
     @Test

@@ -884,6 +884,13 @@
             <version>2.9.8</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba.arthas/arthas-repackage-asm -->
+        <dependency>
+            <groupId>com.alibaba.arthas</groupId>
+            <artifactId>arthas-repackage-asm</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

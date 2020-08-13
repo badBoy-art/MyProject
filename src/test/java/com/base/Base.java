@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
+import com.google.common.hash.Hashing;
 
 
 /**
@@ -157,7 +158,7 @@ public class Base {
 
     @Test
     public void test1() {
-        System.out.println(69037971 & 31);
+        System.out.println(1708374563 & 31);
         System.out.println(~4 + 1);
     }
 
@@ -165,5 +166,22 @@ public class Base {
     public void test07() {
         System.out.println((1 << 5) - 1);
     }
+
+    @Test
+    public void testIntegerNullPointer() {
+        Person person = Person.builder().name("zhangsan").build();
+        Person1 person1 = Person1.builder().build();
+
+        person1.setName(person.getName());
+        person1.setAge(person.getAge());
+    }
+
+    @Test
+    public void testHashCode() {
+        System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
+        System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
+        System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
+    }
+
 
 }

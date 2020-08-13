@@ -1,14 +1,17 @@
 package com.jdbc.test;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
+import com.jdbc.test.mybatis.Sensitive;
+import com.jdbc.test.mybatis.SensitiveStrategy;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * @author xuedui.zhao
@@ -23,6 +26,7 @@ import java.util.Date;
 public class User {
 
     private int id;
+    @Sensitive(strategy = SensitiveStrategy.USERNAME)
     private String name;
     private int age;
     private boolean deleteFlag;

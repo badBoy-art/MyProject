@@ -2,7 +2,6 @@ package com.guava.study;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.util.function.BiConsumer;
 
 import org.apache.curator.shaded.com.google.common.io.Resources;
 import org.junit.Test;
@@ -19,6 +18,8 @@ public class ResourcesStudy {
         Properties properties = new Properties();
         properties.load(Resources.getResource("spring.properties").openStream());
         properties.forEach((k, v) -> System.out.println("K = " + k + " V = " + v));
+
+        System.out.println(properties.getProperty("jdbc.password") instanceof String);
     }
 
 }
