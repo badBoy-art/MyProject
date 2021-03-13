@@ -41,6 +41,8 @@ public class ClassStudy {
     public void test05() {
         int size = 4;
         System.out.println(size >>> 1);
+        System.out.println(size << 1);
+        System.out.println(size << 2);
         System.out.println(size + (size >>> 1) + 1);
     }
 

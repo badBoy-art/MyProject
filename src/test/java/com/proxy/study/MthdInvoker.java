@@ -1,13 +1,13 @@
 package com.proxy.study;
 
+import java.lang.reflect.Method;
+
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
-import java.lang.reflect.Method;
-
 /**
  * @author xuedui.zhao
- * @create 2018-11-24
+ * @create 2018-11-24  CGLIB
  */
 public class MthdInvoker implements MethodInterceptor {
 

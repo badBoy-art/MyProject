@@ -23,20 +23,49 @@ public class Singleton {
     }
 
 
-    private static Singleton singleton = new Singleton();
+    private static final Singleton singleton = new Singleton();
 
-    Singleton() {
+    private Singleton() {
         System.out.println("-----Demo::constructor");
     }
 
 
-    private static Singleton demo = null;
+    private volatile static Singleton demo;
 
     public static Singleton getInstance() {
         if (demo == null) {
+            System.out.println(" demo ");
             demo = new Singleton();
         }
         return demo;
+    }
+
+    private static class Inner {
+        public Inner() {
+            System.out.println("init Inner");
+        }
+
+        private static final Singleton instance = new Singleton();
+    }
+
+    private enum SingletonEnum {
+        INSTANCE;
+
+        private final Singleton singleton;
+
+
+        SingletonEnum() {
+            System.out.println(" singleton_enum ");
+            this.singleton = new Singleton();
+        }
+
+        private Singleton getSingleton() {
+            return singleton;
+        }
+    }
+
+    public static Singleton getSingleton() {
+        return SingletonEnum.INSTANCE.getSingleton();
     }
 
 }

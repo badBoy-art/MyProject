@@ -1,18 +1,23 @@
 package com.jdbc.test.mapper;
 
-import com.jdbc.test.User;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.jdbc.test.User;
+import com.jdbc.test.mybatis.annotation.Shared;
+import com.jdbc.test.mybatis.annotation.TableShardParam;
+import com.jdbc.test.mybatis.annotation.TableShared;
 
 /**
  * @author xuedui.zhao
  * @create 2018-06-04
  */
+@Shared(tableShared = {@TableShared(tableName = "user")})
 public interface UserMapper {
 
-    User getUser(Integer id);
+    User getUser(@Param("id") @TableShardParam("id") Integer id);
 
     int updateUser(@Param("id") int id, @Param("flag") boolean flag, @Param("name") String name);
 
@@ -24,7 +29,7 @@ public interface UserMapper {
 
     int updateBatch(@Param("users") List<User> users);
 
-    List<User> getUserByIds(@Param("ids")int[] ids);
+    List<User> getUserByIds(@Param("ids") int[] ids);
 
     User getUserById(Integer id);
 

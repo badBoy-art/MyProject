@@ -15,6 +15,7 @@ public class Client {
     public static void main(String[] args) {
         //没被代理之前
         Target target = new TargetImpl();
+        System.out.println(target.getClass());
         target.execute1();
         target.execute2();
         System.out.println("被代理之后");
@@ -23,6 +24,7 @@ public class Client {
         Interceptor interceptor = new InterceptorImpl();
         //被代理之后
         target = (Target) interceptor.register(target);
+        System.out.println(target.getClass());
         target.execute1();
         target.execute2();
     }

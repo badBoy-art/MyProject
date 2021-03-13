@@ -1,18 +1,21 @@
 package com.my.study;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Splitter;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
+import java.net.InetAddress;
+import java.text.ParseException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.junit.Test;
 
-import java.net.InetAddress;
-import java.text.ParseException;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Ordering;
 
 public class DateFormat {
 
@@ -76,6 +79,12 @@ public class DateFormat {
         // System.out.println(list2.get(0));
         // Date date = DateUtils.addDays(list2.get(0),7);
         // System.out.println(date);
+
+        List<Long> longs = Lists.newArrayList(1L,3L,2L);
+        System.out.println(longs);
+        longs = longs.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
+        System.out.println(longs);
 
     }
 

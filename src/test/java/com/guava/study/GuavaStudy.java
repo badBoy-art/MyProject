@@ -1,26 +1,26 @@
 package com.guava.study;
 
-import com.Set.study.Person;
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
-import com.google.common.reflect.TypeToken;
-import org.apache.commons.lang3.time.DateUtils;
-import org.junit.Test;
-
-import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
+
+import com.Set.study.Person;
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Predicates;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Ordering;
+import com.google.common.reflect.TypeToken;
 
 public class GuavaStudy {
 
@@ -64,13 +64,8 @@ public class GuavaStudy {
     public void test03() {
         String str =
                 Iterables.find(
-                        new ArrayList<String>(),
-                        new Predicate<String>() {
-                            @Override
-                            public boolean apply(@Nullable String input) {
-                                return false;
-                            }
-                        },
+                        new ArrayList<>(),
+                        input -> false,
                         null);
         System.out.println(str);
     }
@@ -84,12 +79,7 @@ public class GuavaStudy {
         String str =
                 Iterables.find(
                         list,
-                        new Predicate<String>() {
-                            @Override
-                            public boolean apply(@Nullable String input) {
-                                return true;
-                            }
-                        },
+                        input -> true,
                         null);
         System.out.println(str);
     }
@@ -105,18 +95,14 @@ public class GuavaStudy {
         Iterable<String> iterable =
                 Iterables.filter(
                         list,
-                        new Predicate<String>() {
-                            @Override
-                            public boolean apply(@Nullable String input) {
-                                return input.equalsIgnoreCase("ac");
-                            }
-                        });
+                        input -> input.equalsIgnoreCase("ac"));
         System.out.println(iterable);
         AtomicInteger i = new AtomicInteger(1);
         System.out.println(
                 list.stream().map(s -> i.incrementAndGet() + ":" + s).collect(Collectors.toList()));
 
         System.out.println(iterable.iterator().hasNext());
+        System.out.println(list.stream().filter(f -> f.equalsIgnoreCase("a")).collect(Collectors.toList()));
 
         String[] s = list.stream().filter(f -> f.equalsIgnoreCase("a")).toArray(String[]::new);
 
@@ -132,12 +118,7 @@ public class GuavaStudy {
         System.out.println(dates);
         Collections.sort(
                 dates,
-                new Comparator<Date>() {
-                    @Override
-                    public int compare(Date f1, Date f2) {
-                        return f2.compareTo(f1);
-                    }
-                });
+                Comparator.reverseOrder());
         System.out.println(dates);
         System.out.println(dates.subList(0, 1));
         System.out.println(dates.subList(0, 2));
@@ -214,7 +195,7 @@ public class GuavaStudy {
         list.add("4");
         list.add("4");
         System.out.println(list);
-        list = ImmutableSet.copyOf(Iterables.filter(list, Predicates.not(Predicates.isNull()))).asList();
+        list = ImmutableSet.copyOf(list.stream().filter(Predicates.not(Predicates.isNull())::apply).collect(Collectors.toList())).asList();
         System.out.println(list);
     }
 
@@ -238,6 +219,14 @@ public class GuavaStudy {
         } else {
             return 0;
         }
+    }
+
+    @Test
+    public void testDistinct() {
+        ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8));
+        System.out.println(numbersList);
+        List<Integer> listWithoutDuplicates = numbersList.stream().distinct().collect(Collectors.toList());
+        System.out.println(listWithoutDuplicates);
     }
 
 }

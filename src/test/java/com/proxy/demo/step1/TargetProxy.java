@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 /**
  * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-07-02
- * @Description
+ * @Description jdk代理
  */
 public class TargetProxy implements InvocationHandler {
 

@@ -50,8 +50,11 @@ public class StringTest {
         String regex = "(^[A-Z0-9]{15}+$)|(^[A-Z0-9]{18}+$)|(^[A-Z0-9]{20}+$)";
         Pattern pattern = Pattern.compile(regex);
         boolean re = pattern.matcher("A0123456789123456789").find();
-
         System.out.println(re);
+
+        String regex1 = "^[0-9]{19}";
+        Pattern pattern1 = Pattern.compile(regex1);
+        System.out.print(pattern1.matcher("672490938470225263").find());
     }
 
     @Test
@@ -86,6 +89,8 @@ public class StringTest {
         }
 
         System.out.println(orderNoList);
+
+        System.out.println("http://pavo.elongstatic.com/i/Mobile640_960/000duav5.jpg".contains("//pav4o.elongstatic.com/i/Mobile640_960/000duav5.jpg"));
     }
 
     @Test
@@ -98,7 +103,7 @@ public class StringTest {
         System.out.println(DateFormatUtils.format(DateUtils.addDays(new Date(), 1), "yyyy-MM-dd"));
 
         System.out.println(
-         LocalDate.of(2020,8,20).toEpochDay());
+                LocalDate.of(2020, 8, 20).toEpochDay());
     }
 
     @Test
@@ -231,6 +236,7 @@ public class StringTest {
     @Test
     public void test20() {
         String str = "1;2;3;4;5;6;7;8;9";
+        System.out.println(str.endsWith(";"));
         System.out.println(str.endsWith(";") ? StringUtils.stripEnd(str, ";") : str);
     }
 
@@ -277,6 +283,7 @@ public class StringTest {
         String Address = Joiner.on(" ").join("hebei", "tangshan", "duh", Strings.nullToEmpty(null));
         System.out.println("Address == " + Address);
         System.out.println(StringUtils.deleteWhitespace(Address));
+        System.out.println(Joiner.on(";").skipNulls().join("hebei", "shang;hai","tangshan", "duh"));
     }
 
     @Test
@@ -482,6 +489,11 @@ public class StringTest {
         String WHOLE_NATION = Joiner.on(SEPARATOR).join(WHOLE_NATION_PREFIX, "%s");
         System.out.println(WHOLE_NATION_PREFIX);
         System.out.println(WHOLE_NATION);
+    }
+
+    @Test
+    public void test32() {
+        System.out.println(System.currentTimeMillis());
     }
 
 }

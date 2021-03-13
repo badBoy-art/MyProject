@@ -99,3 +99,9 @@ mysql的回表查询：
 B+树叶子节点的数据存储是有序的，底层相当于链表，存储下个节点的链接，比如查询id> 10 and id < 100，先查询id > 10 的，再next知道有id>100的则返回
 数据库并发控制：
 https://mp.weixin.qq.com/s/SVo0eTBaTvneLImJA54Flg
+
+MRR:http://mysql.taobao.org/monthly/2016/01/04/
+优化器将二级索引查询到的记录放到一块缓冲区中；
+如果二级索引扫描到文件的末尾或者缓冲区已满，则使用快速排序对缓冲区中的内容按照主键进行排序；
+用户线程调用 MRR 接口取 cluster index，然后根据cluster index 取行数据；
+当根据缓冲区中的 cluster index 取完数据，则继续调用过程 2) 3)，直至扫描结束；

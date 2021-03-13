@@ -1,11 +1,11 @@
 package com.classLoader.study;
 
-import org.junit.Test;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
+
+import org.junit.Test;
 
 /**
  * @author badBoy
@@ -14,6 +14,14 @@ import java.net.URLClassLoader;
  * Class.forName除了将类的.class文件加载到jvm中之外，还会对类进行解释，执行类中的static块。
  * 而classloader只干一件事情，就是将.class文件加载到jvm中，不会执行static中的内容，只有在newInstance才会去执行static块。
  * <a href="http://gityuan.com/2016/01/24/java-classloader/"></a>
+ * <p>
+ * 类的加载：
+ * 1、装载：查找和导入class文件
+ * 2、链接：把类的二进制数据合并到jre中
+ * 2.1、校验：检查载入class文件数据的正确性
+ * 2.2、准备：给类的静态变量分配存储空间
+ * 2.3、解析：将符号引用转成直接引用
+ * 3、初始化：对类的静态变量、静态代码块执行初始化操作
  */
 public class ClassLoaderStudy {
 

@@ -11,6 +11,7 @@ public class SingletonTest {
     @Test
     public void test01() {
         Singleton.getInstance();
+        Singleton.getSingleton();
     }
 
 }

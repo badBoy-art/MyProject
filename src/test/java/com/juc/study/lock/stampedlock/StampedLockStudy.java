@@ -1,4 +1,4 @@
-package com.lock.study.stampedlock;
+package com.juc.study.lock.stampedlock;
 
 import java.util.concurrent.locks.StampedLock;
 

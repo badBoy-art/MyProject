@@ -1,9 +1,5 @@
 package com.thread.study;
 
-import com.google.common.collect.Lists;
-
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +7,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
+
+import org.junit.Test;
+
+import com.google.common.collect.Lists;
 
 /**
  * Executors Study
@@ -52,6 +52,8 @@ public class ExecutorsStudy {
         list.add("d");
 
         List<String> list1 = list.stream().filter(a -> !"a".equals(a)).collect(Collectors.toList());
+        list = list.stream().filter(a -> !"a".equals(a)).collect(Collectors.toList());
+        System.out.println(list);
         System.out.println(list1);
 
         List<String> list2 = list1.stream().sorted((a, b) -> b.compareTo(a)).collect(Collectors.toList());

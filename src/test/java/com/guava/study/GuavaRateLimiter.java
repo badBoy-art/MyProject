@@ -2,10 +2,10 @@ package com.guava.study;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Test;
+
 import com.google.common.util.concurrent.RateLimiter;
 import com.google.common.util.concurrent.Uninterruptibles;
-
-import org.junit.Test;
 
 /**
  * Guava限流工具
@@ -20,7 +20,7 @@ public class GuavaRateLimiter {
     public void testRateLimiter01() {
         Long start = System.currentTimeMillis();
         // 每秒不超过10个任务被提交
-        RateLimiter rateLimiter = RateLimiter.create(10);
+        RateLimiter rateLimiter = RateLimiter.create(5);
         for (int i = 0; i < 30; i++) {
             // 请求RateLimiter, 超过permits会被阻塞
             rateLimiter.acquire();

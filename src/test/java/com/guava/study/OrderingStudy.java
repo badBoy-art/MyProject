@@ -1,14 +1,15 @@
 package com.guava.study;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Ordering;
-import com.google.common.primitives.Ints;
-import org.apache.commons.lang3.time.DateUtils;
-import org.junit.Test;
-
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Ordering;
+import com.google.common.primitives.Ints;
 
 /**
  * @author xuedui.zhao
@@ -55,4 +56,5 @@ public class OrderingStudy {
         String str = Ordering.natural().max(strs);
         System.out.println(str);
     }
+
 }

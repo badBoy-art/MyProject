@@ -1,0 +1,16 @@
+package com.jdbc.test.mybatis.shared;
+
+import com.jdbc.test.mybatis.util.TableIdUtils;
+
+/**
+ * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * Created on 2020-09-29
+ * @Description
+ */
+public class PoiIdTableNameStrategy extends TableNameStrategy {
+
+    @Override
+    public long tableName(long dependFieldValue) {
+        return TableIdUtils.get(dependFieldValue, 2);
+    }
+}

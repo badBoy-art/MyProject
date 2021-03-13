@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 /**
  * @author xuedui.zhao
- * @create 2018-11-24
+ * @create 2018-11-24 JDK
  */
 public class MyInvocationHandler implements InvocationHandler {
 

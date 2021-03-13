@@ -1,17 +1,17 @@
 package com.guava.study;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Executors;
+
+import org.junit.Test;
+
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
 
 /**
  * @author xuedui.zhao
@@ -42,17 +42,12 @@ public class ListenableFutureStudy {
                     Thread.sleep(500 * i);
                 }
                 ListenableFuture<String> sfuture = service
-                        .submit(new Callable<String>() {
-                            @Override
-                            public String call() throws Exception {
-                                long time = System.currentTimeMillis();
-                                return String.valueOf(time);
-                            }
+                        .submit(() -> {
+                            long time = System.currentTimeMillis();
+                            return String.valueOf(time);
                         });
-                sfuture.addListener(new Runnable() {
-                    @Override
-                    public void run() {
-                    }
+
+                sfuture.addListener(() -> {
                 }, service);
 
                 Futures.addCallback(sfuture, new FutureCallback<String>() {

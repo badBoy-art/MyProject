@@ -24,4 +24,5 @@ public class TestBinaryTree {
         binaryTree.delete(15);
         binaryTree.postOrderTraverse();
     }
+
 }
