@@ -27,7 +27,7 @@ public class Template {
 
     @Test
     public void test() {
-        String URL = "https://oncall-test.corp.kuaishou.com/api/v3/messages/standard";
+        String URL = "www.baidu.com";
         //String URL = "www.baidu.com";
 
         RestTemplate template = new RestTemplate(getFactory());
