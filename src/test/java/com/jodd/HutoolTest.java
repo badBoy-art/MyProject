@@ -5,7 +5,7 @@ import org.junit.Test;
 import cn.hutool.core.util.StrUtil;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-03-02
  * @Description
  */

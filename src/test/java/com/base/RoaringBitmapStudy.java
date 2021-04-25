@@ -12,7 +12,7 @@ import org.roaringbitmap.RoaringBitmap;
 import org.roaringbitmap.buffer.ImmutableRoaringBitmap;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-12-04
  * @Description RoaringBitmap  位图 <a href="https://www.jianshu.com/p/818ac4e90daf"></a>
  */

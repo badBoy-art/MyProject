@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.IntSummaryStatistics;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -112,8 +113,7 @@ public class Base {
                 .mapToInt(Person::getAge).boxed().collect(Collectors.toList());
         System.out.println("brandIds=====" + brandIds);
 
-        List<Person> empty = Lists.newArrayList();
-        System.out.println(empty.stream()
+        System.out.println(persons.stream()
                 .mapToInt(Person::getAge).summaryStatistics().getSum());
 
     }
@@ -206,13 +206,17 @@ public class Base {
                         .build());
 
         Map<String, Person> map = list.stream().collect(Collectors.toMap(Person::getName, a -> a, (k1, k2) -> k1))
-                .entrySet().stream().sorted(Map.Entry.comparingByValue(
-                        Comparator.comparing(Person::getAge))).collect(Collectors.toMap(
+                .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(Person::getAge)))
+                .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (oldVal, newVal) -> oldVal,
                         LinkedHashMap::new));
 
+        Map<String, String> map2 = map.entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey, e -> (String) e.getValue().getName()));
+
+        System.out.println("map2 ===== " + map2);
         System.out.println(map.containsKey("ls"));
         System.out.println(map);
 
@@ -269,8 +273,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println((int) 30000000000000000L);
-        System.out.println(String.valueOf(3926722).hashCode());
+        System.out.println("9438391270732315103".hashCode());
     }
 
     @Test
@@ -492,6 +495,71 @@ public class Base {
         String[] params = "11.jpg".split("\\.");
         String format = params[params.length - 1];
         System.out.println(Arrays.asList(FORMATS).contains(format));
+    }
+
+    @Test
+    public void testpin() {
+        List<Integer> sources = Lists.newArrayList(1, 2, 3);
+        String source = Joiner.on(",").skipNulls().join(sources);
+        String sql = String.format(" delete from a where id > 0 and source in (%s)", source);
+        System.out.println(sql);
+    }
+
+    @Test
+    public void testSql() {
+        String str = "6724909382822776460,\n" +
+                "6724909511642250995,\n" +
+                "6724909544071768220,\n" +
+                "6724909389386733210,\n" +
+                "6724909418110661558,\n" +
+                "6724909295320003275,\n" +
+                "6724909454974760016,\n" +
+                "6724909255711761732,\n" +
+                "6724909531878809290,\n" +
+                "6724909508412437915,\n" +
+                "6724909544081330930,\n" +
+                "6724909296711295876,\n" +
+                "6724909544095286619,\n" +
+                "6724909543921054717,\n" +
+                "6724909488036049506,\n" +
+                "6724909375909156951,\n" +
+                "6724909543917598155,\n" +
+                "6724909480335098363,\n" +
+                "6724909544087072579,\n" +
+                "6724909394378112948,\n" +
+                "6724909289828080991,\n" +
+                "6724909449366030556,\n" +
+                "6724909544078413082,\n" +
+                "6724909544080449763,\n" +
+                "6724909544059961950,\n" +
+                "6724909405881547902,\n" +
+                "6724909544087585355,\n" +
+                "6724909355020711698,\n" +
+                "6724909396729593554,\n" +
+                "6724909544066186642,\n" +
+                "6724909544090592876,\n" +
+                "6724909544064341725,";
+
+        List<String> poiIds = Splitter.on(",").omitEmptyStrings().trimResults().splitToList(str);
+
+        String sql = "update ***_%s set image_url = \"https:*****.jpg\" where poi_id = %s;";
+
+        poiIds.forEach(x -> System.out.println(String.format(sql, (Long.parseLong(x) % 10) + "", x)));
+
+    }
+
+    @Test
+    public void testMapToInt() {
+        List<Integer> list = Lists.newArrayList(10, 11, 12);
+        Integer sum = list.stream().mapToInt(x -> x).sum();
+        System.out.println("sum == " + sum);
+    }
+
+    @Test
+    public void testUnmodifiableMap() {
+        Map<String, String> parsedArgs = new HashMap<>();
+        Map<String, String> map = Collections.unmodifiableMap(parsedArgs);
+        System.out.println(map.get("1"));
     }
 }
 

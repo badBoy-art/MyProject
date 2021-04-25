@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-12-30
  * @Description <a href="https://juejin.cn/post/6844903446475177998"></a>
  */

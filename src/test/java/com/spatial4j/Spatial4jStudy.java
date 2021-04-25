@@ -10,7 +10,7 @@ import org.locationtech.spatial4j.distance.DistanceCalculator;
 import org.locationtech.spatial4j.shape.Point;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-11
  * @Description 计算两个经纬度的距离
  * {link https://github.com/locationtech/spatial4j/blob/master/src/test/java/org/locationtech/spatial4j/distance/TestDistances.java}

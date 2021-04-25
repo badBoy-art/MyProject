@@ -14,7 +14,7 @@ import org.apache.commons.cli.PosixParser;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-22
  * @Description 开发命令行工具
  * Apache Commons CLI 支持多种输入参数格式，主要支持的格式有以下几种：

@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 import com.jdbc.test.mybatis.shared.TableNameStrategy;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-09-29
  * @Description
  */

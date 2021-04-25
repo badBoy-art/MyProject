@@ -8,8 +8,7 @@ import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
- * Created on 2020-03-23
+ * @author Created on 2020-03-23
  * @Description <a href="https://xiaobazhang.github.io/2018/06/19/MurmurHash%E7%AE%97%E6%B3%95/"></a>
  */
 public class MurmurHashStudy {

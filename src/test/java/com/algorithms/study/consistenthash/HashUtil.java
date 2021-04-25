@@ -1,7 +1,7 @@
 package com.algorithms.study.consistenthash;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-10
  * @Description
  */

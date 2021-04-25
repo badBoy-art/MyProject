@@ -14,7 +14,7 @@ import org.junit.Test;
  * 若实现的是Externalizable接口，则没有任何东西可以自动序列化，需要在writeExternal方法中进行手工指定所要序列化的变量，这与是否被transient修饰无关。
  * 因此第二个例子输出的是变量content初始化的内容，而不是null
  *
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-03-13
  * @Description
  */

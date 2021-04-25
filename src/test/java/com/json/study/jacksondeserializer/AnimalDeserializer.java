@@ -10,7 +10,7 @@ import com.json.study.interfacedeser.Activite;
 import com.json.study.interfacedeser.People;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-03
  * @Description
  */

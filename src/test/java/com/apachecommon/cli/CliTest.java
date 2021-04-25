@@ -4,7 +4,7 @@ import org.apache.commons.cli.ParseException;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-22
  * @Description
  */

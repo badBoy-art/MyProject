@@ -3,7 +3,7 @@ package com.pattern.chainofresponsibility;
 import java.util.Random;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-16
  * @Description teamLeader
  */

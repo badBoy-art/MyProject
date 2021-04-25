@@ -5,7 +5,7 @@ import java.util.Stack;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-01-08
  */
 public class BracketPair {

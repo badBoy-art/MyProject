@@ -5,7 +5,7 @@ import org.springframework.aop.support.AopUtils;
 import org.springframework.util.ClassUtils;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-27
  * @Description
  */

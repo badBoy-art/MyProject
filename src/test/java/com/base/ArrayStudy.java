@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-09-05
  * <a href="https://dunwu.github.io/javacore/basics/java-array.html"></a>
  */

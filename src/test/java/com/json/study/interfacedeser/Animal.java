@@ -3,7 +3,7 @@ package com.json.study.interfacedeser;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-02
  * @Description
  */

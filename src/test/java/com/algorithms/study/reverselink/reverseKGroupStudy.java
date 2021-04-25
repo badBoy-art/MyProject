@@ -3,7 +3,7 @@ package com.algorithms.study.reverselink;
 import org.junit.Test;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-05-06
  * @Description
  */

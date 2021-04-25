@@ -91,7 +91,7 @@ public class ClassStudy {
 
         System.out.println("int = " + Thread.currentThread().isInterrupted());
 
-        LockSupport.park(this);
+        LockSupport.parkNanos(this, 3000);
         // 根据 park 方法 API描述，程序在下述三种情况会继续向下执行
         //  1. 被 unpark
         //  2. 被中断(interrupt)

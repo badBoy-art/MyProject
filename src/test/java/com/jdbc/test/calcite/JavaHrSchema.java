@@ -3,7 +3,7 @@ package com.jdbc.test.calcite;
 /**
  * 定义 Schema 结构
  *
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-09-06
  */
 public class JavaHrSchema {

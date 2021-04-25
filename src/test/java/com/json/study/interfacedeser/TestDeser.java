@@ -13,7 +13,7 @@ import com.json.study.jackson.JacksonSupport;
 import com.json.study.jacksondeserializer.AnimalDeserializer;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-02
  * @Description
  */

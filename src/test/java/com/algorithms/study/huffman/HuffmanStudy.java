@@ -13,7 +13,7 @@ import org.junit.Test;
 import lombok.ToString;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-21
  * @Description 赫夫曼树 前缀编码
  */

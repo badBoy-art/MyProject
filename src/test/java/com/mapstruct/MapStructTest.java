@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.mapstruct.factory.Mappers;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-05-06
  * @Description
  */

@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.StringJoiner;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
 
@@ -283,7 +284,7 @@ public class StringTest {
         String Address = Joiner.on(" ").join("hebei", "tangshan", "duh", Strings.nullToEmpty(null));
         System.out.println("Address == " + Address);
         System.out.println(StringUtils.deleteWhitespace(Address));
-        System.out.println(Joiner.on(";").skipNulls().join("hebei", "shang;hai","tangshan", "duh"));
+        System.out.println(Joiner.on(";").skipNulls().join("hebei", "shang;hai", "tangshan", "duh"));
     }
 
     @Test
@@ -427,6 +428,18 @@ public class StringTest {
             }
         }
         System.out.println(stringBuilder.substring(0, stringBuilder.length() - 1));
+    }
+
+    @Test
+    public void testStringJoiner() {
+        List<String> list = Lists.newArrayList("a", "B", "C");
+        StringJoiner stringJoiner = new StringJoiner(";");
+        stringJoiner.add("");
+        stringJoiner.add("https://static.yximgs.com/bs2/op-vc-merchant/PIC-86a3e1f5-1285-474f-995a-b30f4869cf23.jpg");
+
+        list.subList(1, list.size()).forEach(stringJoiner::add);
+
+        System.out.println(stringJoiner.toString());
     }
 
     @Test

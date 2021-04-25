@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.Setter;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-27
  * @Description
  */

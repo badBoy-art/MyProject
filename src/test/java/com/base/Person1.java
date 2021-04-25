@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
  * Created on 2020-07-21
+ *
  * @Description
  */
 @Data

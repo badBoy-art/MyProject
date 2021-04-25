@@ -1,5 +1,6 @@
 package com.guava.study;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -49,6 +50,9 @@ public class JoinerSplitterStudy {
         String str = "xiaoming=11,xiaohong=23";
         Map<String, String> map = Splitter.on(",").withKeyValueSeparator("=").split(str);
         System.out.println(map);
+
+        Map<String,String> map1 = Collections.emptyMap();
+        System.out.println(map1.get("1"));
     }
 
     @Test

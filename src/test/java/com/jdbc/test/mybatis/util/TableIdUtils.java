@@ -1,7 +1,7 @@
 package com.jdbc.test.mybatis.util;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-09-29
  * @Description
  */

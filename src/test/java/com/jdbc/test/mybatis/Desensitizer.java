@@ -3,7 +3,7 @@ package com.jdbc.test.mybatis;
 import java.util.function.Function;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-08-13
  * @Description
  */

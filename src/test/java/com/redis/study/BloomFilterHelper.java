@@ -8,7 +8,7 @@ import com.google.common.hash.Funnels;
 import com.google.common.hash.Hashing;
 
 /**
- * @author zhaoxuedui <zhaoxuedui@kuaishou.com>
+ * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-06-04
  * @Description redis实现bloom过滤器
  */
