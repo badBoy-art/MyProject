@@ -1,10 +1,10 @@
 package com.guava.study;
 
-import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 
 /**
  * 订阅事件和事件通知
@@ -41,7 +41,7 @@ public class EventBusStudy {
 
         @Subscribe
         public void listen(StudentEvent event) {
-            String say = event.getStatus() ? event.getName() + ", 完成了作业.." : event.getName() + "没完成作业";
+            String say = event.getStatus() ? event.getName() + ", 完成了作业.." : event.getName() + ", 没完成作业";
             rs.add(say);
         }
 
@@ -50,12 +50,23 @@ public class EventBusStudy {
         }
     }
 
+    public class StudentListener {
+
+        @Subscribe
+        public void listen(String str) {
+            System.out.println("StudentListener = " + str);
+        }
+    }
+
     public static void main(String[] args) {
         EventBusStudy ec = new EventBusStudy();
-        TeacherListener listener = ec.new TeacherListener();//观察者
+        TeacherListener listener1 = ec.new TeacherListener();//观察者1
+        StudentListener listener2 = ec.new StudentListener();//观察者2
         EventBus eventBus = new EventBus();
         //注册监听器
-        eventBus.register(listener);
+        eventBus.register(listener1);
+        eventBus.register(listener2);
+
         StudentEvent nickEvent = ec.new StudentEvent("nick", true);//受查者
         StudentEvent devidEvent = ec.new StudentEvent("devid", false);//受查者
         StudentEvent kenEvent = ec.new StudentEvent("ken", true);//受查者
@@ -63,10 +74,12 @@ public class EventBusStudy {
         eventBus.post(nickEvent);
         eventBus.post(devidEvent);
         eventBus.post(kenEvent);
+        eventBus.post("小明写完了作业");
         //遍历返回信息
-        for (String say : listener.rs()) {
+        for (String say : listener1.rs()) {
             System.out.println(say);
         }
+
     }
 
 }
