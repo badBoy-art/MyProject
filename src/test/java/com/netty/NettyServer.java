@@ -16,8 +16,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
 /**
  * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-02-22
- * @Description
- * <href a="https://www.toutiao.com/i6794445371457143307/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1582364097&app=news_article&utm_source=weixin&utm_medium=toutiao_ios&req_id=202002221734560100140470732763E098&group_id=6794445371457143307"></href>
+ * @Description <href a="https://www.toutiao.com/i6794445371457143307/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1582364097&app=news_article&utm_source=weixin&utm_medium=toutiao_ios&req_id=202002221734560100140470732763E098&group_id=6794445371457143307"></href>
  */
 @Service
 public class NettyServer {
@@ -32,7 +31,7 @@ public class NettyServer {
     private void runServer(int port) {
         System.out.println("===============Message服务端启动===============");
         EventLoopGroup bossGroup = new NioEventLoopGroup();
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors() * 2);
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup);
