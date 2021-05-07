@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -72,5 +75,41 @@ public class NettyClient {
         } finally {
             group.shutdownGracefully();
         }
+    }
+
+    private Channel connect(URI uri) throws InterruptedException {
+        EventLoopGroup group = new NioEventLoopGroup();
+
+        Bootstrap b = new Bootstrap();
+        String protocol = uri.getScheme();
+        if (!"ws".equals(protocol)) {
+            throw new IllegalArgumentException("Unsupported protocol: " + protocol);
+        }
+        HttpHeaders customHeaders = new DefaultHttpHeaders();
+        customHeaders.add("MyHeader", "MyValue");
+        final MyWebSocketClientHandler handler = new MyWebSocketClientHandler(WebSocketClientHandshakerFactory.newHandshaker(uri, WebSocketVersion.V13, null, false, customHeaders));
+        b.group(group);
+        b.channel(NioSocketChannel.class);
+        b.option(ChannelOption.TCP_NODELAY, true);
+        b.handler(new ChannelInitializer<SocketChannel>() {
+            @Override
+            public void initChannel(SocketChannel ch) throws Exception {
+                ChannelPipeline pipeline = ch.pipeline();
+                pipeline.addLast("http-codec", new HttpClientCodec());
+                pipeline.addLast("aggregator", new HttpObjectAggregator(8192));
+                pipeline.addLast("ws-handler", handler);
+            }
+        });
+        System.out.println("===============Message客户端启动===============");
+        ChannelFuture future = b.connect(uri.getHost(), uri.getPort()).sync();
+        if (!future.isSuccess()) {
+            throw new IllegalArgumentException("Unsupported protocol: " + future.cause());
+        }
+        Channel channel = future.channel();
+        channel.closeFuture().addListener((ChannelFutureListener) cdf -> {
+            //链接关闭，清空链接缓存
+        });
+        return channel;
+
     }
 }

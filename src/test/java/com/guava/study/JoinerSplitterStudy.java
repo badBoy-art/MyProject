@@ -35,7 +35,7 @@ public class JoinerSplitterStudy {
     @Test
     public void testMap() {
         Map<String, String> map = ImmutableMap.of("zhang", "san", "li", "si");
-        System.out.println(Joiner.on("-").withKeyValueSeparator("=").join(map));
+        System.out.println(Joiner.on(";").withKeyValueSeparator("=").join(map));
     }
 
     @Test

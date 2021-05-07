@@ -273,7 +273,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("9438391270732315103".hashCode());
+        System.out.println("76744346".hashCode());
     }
 
     @Test
