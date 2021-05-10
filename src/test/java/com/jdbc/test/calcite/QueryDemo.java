@@ -13,6 +13,8 @@ import org.apache.calcite.schema.SchemaPlus;
 /**
  * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-09-06
+ * calcite sql解析 <a href="https://yuzhouwan.com/posts/201018/></a>
+ * <a href="https://blog.csdn.net/QXC1281/article/details/89481346></a>
  */
 public class QueryDemo {
 

@@ -561,5 +561,31 @@ public class Base {
         Map<String, String> map = Collections.unmodifiableMap(parsedArgs);
         System.out.println(map.get("1"));
     }
+
+    @Test
+    public void testComputeIfAbsent() {
+        Map<String, String> map = new HashMap<>();
+        map.computeIfAbsent("Hello", new Function<String, String>() {
+            @Nullable
+            @Override
+            public String apply(@Nullable String input) {
+                return input + " World";
+            }
+        });
+
+        System.out.println(map);
+
+    }
+
+    @Test
+    public void testInstanceofAndIsAssignableFrom() {
+        Person person = new Person();
+        person.setName("test");
+        person.setAge(15);
+
+        System.out.println(person instanceof Person);
+        System.out.println(person.getClass().isAssignableFrom(Person.class));
+    }
+
 }
 

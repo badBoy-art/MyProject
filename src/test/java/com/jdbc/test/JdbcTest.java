@@ -1,15 +1,15 @@
 package com.jdbc.test;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-
-import org.junit.Test;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.junit.Test;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 /**
  * @author xuedui.zhao
@@ -144,5 +144,15 @@ public class JdbcTest {
         config.setMaximumPoolSize(50);
 
         return new HikariDataSource(config);
+    }
+
+    @Test
+    public void test03() {
+        //sql分页优化
+        /**
+         * select * from table order by id desc limit 10 offset 800000
+         * to->
+         * select * from table order by id desc where id > 800000 limit 10;
+         */
     }
 }

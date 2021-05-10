@@ -509,6 +509,15 @@ public class StringTest {
         System.out.println(System.currentTimeMillis());
     }
 
+    @Test
+    public void test33() {
+        int num = 32;
+        int length = String.valueOf(num).length();
+        String shard = String.format("%0" + length + "d", 32);
+        String shard1 = String.format("%0" + length + "d", 2);
+        System.out.println(shard);
+        System.out.println(shard1);
+    }
 }
 
 class MyCom implements Comparator<String> {
