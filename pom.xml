@@ -921,6 +921,13 @@
             <version>0.1.54</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.jooq/joor -->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>joor</artifactId>
+            <version>0.9.6</version>
+        </dependency>
+
     </dependencies>
 
     <build>
