@@ -95,7 +95,8 @@ public class RainWater {
         int[] newHeights = new int[heights.length + 2];
         newHeights[0] = 0;
         newHeights[newHeights.length - 1] = 0;
-        System.arraycopy(heights, 0, newHeights, 1, heights.length + 1 - 1);
+        //src:源数组 srcPos:源数组要复制的起始位置 dest:目的数组 destPos:目的数组放置的的起始位置 legth:复制的长度
+        System.arraycopy(heights, 0, newHeights, 1, heights.length);
         //开始遍历
         for (int i = 0; i < newHeights.length; i++) {
             //如果栈不为空且当前考察的元素值小于栈顶元素值

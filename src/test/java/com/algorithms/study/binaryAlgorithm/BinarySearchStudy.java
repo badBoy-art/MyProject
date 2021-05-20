@@ -1,4 +1,4 @@
-package com.algorithms.study.binarySearchAlgorithm;
+package com.algorithms.study.binaryAlgorithm;
 
 import org.junit.Test;
 

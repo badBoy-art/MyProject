@@ -38,6 +38,8 @@ public class JdbcTest {
         Connection conn = null;
         Statement stmt = null;
         try {
+            String sql;
+            sql = "SELECT id, name, age, deleteFlag FROM user";
             // 注册 JDBC 驱动
             Class.forName(JDBC_DRIVER);
 
@@ -48,8 +50,8 @@ public class JdbcTest {
             // 执行查询
             System.out.println(" 实例化Statement对象...");
             stmt = conn.createStatement();
-            String sql;
-            sql = "SELECT id, name, age, deleteFlag FROM user";
+            //stmt = conn.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+
             ResultSet rs = stmt.executeQuery(sql);
 
             // 展开结果集数据库

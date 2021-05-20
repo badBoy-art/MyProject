@@ -31,7 +31,7 @@ public class ZeroCopyStudy {
 
 
     /**
-     * mmap+write
+     * mmap+write mmap:内存文件映射
      * mmap+write 简单来说就是使用 mmap 替换了 read+write 中的 read 操作，减少了一次 CPU 的拷贝。
      * mmap 主要实现方式是将读缓冲区的地址和用户缓冲区的地址进行映射，内核缓冲区和应用缓冲区共享，从而减少了从读缓冲区到用户缓冲区的一次CPU拷贝
      *

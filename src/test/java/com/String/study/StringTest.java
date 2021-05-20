@@ -513,10 +513,8 @@ public class StringTest {
     public void test33() {
         int num = 32;
         int length = String.valueOf(num).length();
-        String shard = String.format("%0" + length + "d", 32);
-        String shard1 = String.format("%0" + length + "d", 2);
+        String shard = String.format("%0" + length + "d", 3);
         System.out.println(shard);
-        System.out.println(shard1);
     }
 }
 

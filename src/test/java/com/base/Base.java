@@ -1,5 +1,6 @@
 package com.base;
 
+import static java.lang.Double.compare;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
@@ -189,6 +190,7 @@ public class Base {
                         .age(12)
                         .name("zs")
                         .sex(0)
+                        .salary(200D)
                         .hobbits(Lists.newArrayList("1", "2"))
                         .build(),
                 Person.builder()
@@ -196,12 +198,14 @@ public class Base {
                         .age(12)
                         .name("ls")
                         .sex(1)
+                        .salary(300D)
                         .hobbits(Lists.newArrayList("3", "4"))
                         .build(),
                 Person.builder()
                         .address("beijing")
                         .age(10)
                         .name("ww")
+                        .salary(400D)
                         .hobbits(Lists.newArrayList("5", "6"))
                         .build());
 
@@ -224,11 +228,39 @@ public class Base {
         list2.add(Person.builder().age(13).name("test").build());
         list2.addAll(list);
         System.out.println(list2);
-        System.out.println(list.stream().sorted(Comparator.comparing(Person::getAge).reversed()).collect(Collectors.toList()));
+        System.out.println(list.stream().sorted(Comparator.comparing(Person::getAge).thenComparing((o1, o2) -> compare(o2.getSalary(), o1.getSalary()))).collect(Collectors.toList()));
         System.out.println(list.stream().max(Comparator.comparing(Person::getAge).thenComparing((o1, o2) -> o2.getSex() - o1.getSex())).get());
 
         System.out.println(list.stream().mapToLong(Person::getAge).boxed().collect(Collectors.toList()));
 
+    }
+
+    @Test
+    public void testComparator() {
+        List<Person> list = Lists.newArrayList();
+        Person p1 = Person.builder().salary(0.0).build();
+        Person p2 = Person.builder().salary(-0.0).build();
+        Person p3 = Person.builder().salary(-(0.0d / 0.0)).build();
+        Person p4 = Person.builder().salary(0x7ff8000000000000L).build();
+
+        list.add(p1);
+        list.add(p2);
+        //list.add(p3);
+        //list.add(p4);
+        System.out.println(list.subList(0, list.size()));
+        List<Person> listSorted = list.stream().sorted(Comparator.comparingDouble(Person::getSalary)).collect(toList());
+        System.out.println(listSorted);
+    }
+
+    @Test
+    public void testDoubleToLongBits() {
+        System.out.println(Double.NaN == Double.NaN);
+        System.out.println(compare(Double.NaN, Double.NaN));
+        System.out.println(Double.doubleToLongBits(Double.NaN));
+        System.out.println(Double.doubleToLongBits(-0.0));
+        System.out.println(Float.intBitsToFloat(0x7fc00000));
+        System.out.println(Double.longBitsToDouble(0x7ff8000000000000L));
+        System.out.println(Double.doubleToLongBits(0x7fc00000));
     }
 
     @Test
@@ -273,7 +305,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("76744346".hashCode());
+        System.out.println("1724520".hashCode());
     }
 
     @Test
@@ -507,42 +539,12 @@ public class Base {
 
     @Test
     public void testSql() {
-        String str = "6724909382822776460,\n" +
-                "6724909511642250995,\n" +
-                "6724909544071768220,\n" +
-                "6724909389386733210,\n" +
-                "6724909418110661558,\n" +
-                "6724909295320003275,\n" +
-                "6724909454974760016,\n" +
-                "6724909255711761732,\n" +
-                "6724909531878809290,\n" +
-                "6724909508412437915,\n" +
-                "6724909544081330930,\n" +
-                "6724909296711295876,\n" +
-                "6724909544095286619,\n" +
-                "6724909543921054717,\n" +
-                "6724909488036049506,\n" +
-                "6724909375909156951,\n" +
-                "6724909543917598155,\n" +
-                "6724909480335098363,\n" +
-                "6724909544087072579,\n" +
-                "6724909394378112948,\n" +
-                "6724909289828080991,\n" +
-                "6724909449366030556,\n" +
-                "6724909544078413082,\n" +
-                "6724909544080449763,\n" +
-                "6724909544059961950,\n" +
-                "6724909405881547902,\n" +
-                "6724909544087585355,\n" +
-                "6724909355020711698,\n" +
-                "6724909396729593554,\n" +
-                "6724909544066186642,\n" +
-                "6724909544090592876,\n" +
-                "6724909544064341725,";
+        String str = "6724909544116701482,\n" +
+                "6724909355514082062,\n";
 
         List<String> poiIds = Splitter.on(",").omitEmptyStrings().trimResults().splitToList(str);
 
-        String sql = "update ***_%s set image_url = \"https:*****.jpg\" where poi_id = %s;";
+        String sql = "update _%s set image_url = \"1620891911016.png\" where poi_id = %s;";
 
         poiIds.forEach(x -> System.out.println(String.format(sql, (Long.parseLong(x) % 10) + "", x)));
 

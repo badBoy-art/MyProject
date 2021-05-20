@@ -21,6 +21,7 @@ public class Person {
     private Integer age;
     private Integer sex;
     private String address;
+    private double salary;
     private List<String> hobbits;
 
     public Person(String name, int age, int sex, String address) {

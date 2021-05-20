@@ -85,13 +85,12 @@ public class ReentrantLockStudy {
                 lock.unlock();
             }
         }).start();
-
     }
 
     public void get() {
         lock.lock();
         try {
-            oddcondition.await(5000, TimeUnit.MILLISECONDS);
+            oddcondition.await(2000, TimeUnit.MILLISECONDS);
             System.out.println("oddcondition_await");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
