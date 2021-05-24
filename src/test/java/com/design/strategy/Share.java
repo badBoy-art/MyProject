@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author zhaoxuedui <zhaoxuedui@''.com>
  * Created on 2020-04-27
- * @Description
+ * @Description 策略模式
  */
 public class Share {
 

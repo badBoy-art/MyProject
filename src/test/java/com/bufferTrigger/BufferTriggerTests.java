@@ -1,8 +1,10 @@
-package com;
+package com.bufferTrigger;
 
 
-import static com.google.common.util.concurrent.Uninterruptibles.sleepUninterruptibly;
+import static com.alibaba.csp.sentinel.util.TimeUtil.currentTimeMillis;
 import static java.util.concurrent.TimeUnit.SECONDS;
+
+import java.util.concurrent.locks.LockSupport;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,19 +23,19 @@ public class BufferTriggerTests {
     public void test() {
         for (int i = 1; i < 20; i++) {
             buffer.enqueue("test" + i);
-            sleepUninterruptibly(1,SECONDS);
+            //sleepUninterruptibly(1,SECONDS);
         }
-
+        LockSupport.parkUntil(this, currentTimeMillis() + 3000);
+        System.out.println("over");
     }
-
 
     private BufferTrigger<String> buffer;
 
     @Before
     public void init() {
-        buffer = BufferTrigger.<String, Multiset<String>> simple() //
+        buffer = BufferTrigger.<String, Multiset<String>>simple() //
                 // 触发策略，每秒执行一次
-                .interval(1, SECONDS)
+                .interval(2, SECONDS)
                 // 容器的工场，以及入队方法
                 .setContainer(ConcurrentHashMultiset::create, Multiset::add)
                 // 消费方法
