@@ -1,9 +1,9 @@
 package com.Set.study;
 
-import org.junit.Test;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import org.junit.Test;
 
 /**
  * hashSet学习
@@ -20,12 +20,12 @@ public class HashSetStudy {
         Person person1 = Person.builder().age(2).name("大棚").build();
         hashSet.add(person);
         hashSet.add(person1);
-        for (Person person2: hashSet) {
+        for (Person person2 : hashSet) {
             System.out.println(person2.getName());
         }
         System.out.println("----------------");
         hashSet.remove(person);
-        for (Person person2: hashSet) {
+        for (Person person2 : hashSet) {
             System.out.println(person2.getName());
         }
     }
@@ -37,14 +37,14 @@ public class HashSetStudy {
         Person1 person1 = Person1.builder().age(2).name("大棚").build();
         hashSet.add(person);
         hashSet.add(person1);
-        for (Person1 person2: hashSet) {
+        for (Person1 person2 : hashSet) {
             System.out.println(person2.getName());
         }
         System.out.println("----------------");
         person.setAge(20);
         hashSet.remove(person);
         //hashSet.add(person);
-        for (Person1 person2: hashSet) {
+        for (Person1 person2 : hashSet) {
             System.out.println(person2.getName());
         }
     }
@@ -52,11 +52,12 @@ public class HashSetStudy {
     @Test
     public void test02() {
         int i = -2000000000;
-        int j =  2000000000;
+        int j = 2000000000;
 
         System.out.println(i >>> 30);
         System.out.println(j >> 30);
         System.out.println(i >> 30);
+        System.out.println(8 >>> 2);
     }
 
     @Test

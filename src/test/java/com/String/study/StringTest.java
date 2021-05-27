@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.StringJoiner;
 import java.util.TreeSet;
@@ -30,6 +31,7 @@ import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
 
@@ -211,10 +213,45 @@ public class StringTest {
 
     @Test
     public void test17() {
-        String str = "11111";
+        String str = "{\n" +
+                "    \"id\":0,\n" +
+                "    \"poiId\":0,\n" +
+                "    \"logisticParent\":0,\n" +
+                "    \"geographicParent\":0,\n" +
+                "    \"avaliable\":0,\n" +
+                "    \"name\":\"\",\n" +
+                "    \"address\":\"\",\n" +
+                "    \"longitude\":\"\",\n" +
+                "    \"latitude\":\"\",\n" +
+                "    \"geohash8\":\"\",\n" +
+                "    \"country\":\"\",\n" +
+                "    \"province\":\"\",\n" +
+                "    \"city\":\"\",\n" +
+                "    \"district\":\"\",\n" +
+                "    \"town\":\"\",\n" +
+                "    \"telephone\":\"\",\n" +
+                "    \"isAoi\":0,\n" +
+                "    \"thirdCategoryId\":0,\n" +
+                "    \"provinceCode\":0,\n" +
+                "    \"cityCode\":0,\n" +
+                "    \"districtCode\":0,\n" +
+                "    \"imageUrl\":\"\",\n" +
+                "    \"createTime\":0,\n" +
+                "    \"updateTime\":0,\n" +
+                "    \"ext\":\"\",\n" +
+                "    \"firstCategoryId\":0,\n" +
+                "    \"secondCategoryId\":0,\n" +
+                "    \"rating\":\"0.00\",\n" +
+                "    \"source\":\"\",\n" +
+                "    \"externalPoiId\":\"\"\n" +
+                "}";
         try {
-            JSONObject.parseObject(str);
-            System.out.println("true");
+            Map<String, List<String>> map = Maps.newHashMap();
+            map.put("zhangsan", Lists.newArrayList("10", "20", "30"));
+            JSONObject jsonObject = JSONObject.parseObject(str);
+            System.out.println(jsonObject);
+            jsonObject.putAll(map);
+            System.out.println(jsonObject);
         } catch (Exception e) {
             System.out.println("false");
         }

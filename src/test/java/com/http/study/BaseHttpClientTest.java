@@ -5,6 +5,20 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * request.getRequestURL() 返回全路径
+ * request.getRequestURI() 返回除去host（域名或者ip）部分的路径
+ * request.getContextPath() 返回工程名部分，如果工程映射为/，此处返回则为空
+ * request.getServletPath() 返回除去host和工程名部分的路径
+ * <p>
+ * request.getRequestURL() http://localhost:8080/jqueryLearn/resources/request.jsp
+ * request.getRequestURI() /jqueryLearn/resources/request.jsp
+ * request.getContextPath() /jqueryLearn
+ * request.getServletPath() /resources/request.jsp
+ * <p>
+ * <p>
+ * 注： resources为WebContext下的目录名
+ *     jqueryLearn 为工程名
+ *
  * @author xuedui.zhao
  * @create 2019-08-08
  */

@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.IntSummaryStatistics;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,6 +30,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.base.Supplier;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -305,7 +307,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("1724520".hashCode());
+        System.out.println("636878602".hashCode());
     }
 
     @Test
@@ -587,6 +589,50 @@ public class Base {
 
         System.out.println(person instanceof Person);
         System.out.println(person.getClass().isAssignableFrom(Person.class));
+    }
+
+    @Test
+    public void testPutAll() {
+        Map<String, Object> map = Maps.newHashMap();
+        Map<String, Object> map2 = Maps.newHashMap();
+        map.put("zhangsan", 10);
+        map.put("lisi", 20);
+        map.put("naliu", 60);
+
+        map2.put("zhangsan", 30);
+        map2.put("lisi", 40);
+        map2.put("wangwu", 50);
+
+        map.putAll(map2);
+        System.out.println(map);
+    }
+
+    @Test
+    public void testIdentityHashMap() {
+        //测试key可以重复的map集合
+        HashMap<Object, String> map = new HashMap<>();
+        Map<Object, String> idenMap = new IdentityHashMap<>();
+        idenMap.put("测试", "成功");
+        idenMap.put("测试", "失败");
+
+        map.put("测试", "成功");
+        map.put("测试", "失败");
+
+        System.out.println("IdentityHashMap运行结果：" + idenMap);
+        System.out.println("HashMap运行结果：" + map);
+
+        System.out.println("-------------------------------------------------------");
+
+        idenMap.put(new String("对象"), "成功");
+        idenMap.put(new String("对象"), "失败");
+        idenMap.put(new String("对象"), "李四");
+
+        map.put(new String("对象"), "成功");
+        map.put(new String("对象"), "失败");
+        map.put(new String("对象"), "李四");
+
+        System.out.println("IdentityHashMap运行结果：" + idenMap);
+        System.out.println("HashMap运行结果：" + map);
     }
 
 }
