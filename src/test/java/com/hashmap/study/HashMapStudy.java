@@ -1,13 +1,14 @@
 package com.hashmap.study;
 
-import com.Extends.study.WhiteDog;
-import com.google.common.base.Preconditions;
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.junit.Test;
+
+import com.Extends.study.WhiteDog;
+import com.google.common.base.Preconditions;
 
 /**
  * hashMap 源码学习
@@ -53,16 +54,12 @@ public class HashMapStudy {
             linkedMap.put("name" + i, whiteDog);
         }
 
-        System.out.println(map);
-
+        System.out.println("map = " + map);
         map.get("name2");
+        System.out.println("map after get name2 = " + map);
 
-        System.out.println(map);
-
-        System.out.println(linkedMap);
-
+        System.out.println("linkedMap = " + linkedMap);
         linkedMap.get("name1");
-
-        System.out.println(linkedMap);
+        System.out.println("linkedMap after get name1 = " + linkedMap);
     }
 }

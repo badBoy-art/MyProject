@@ -1,16 +1,14 @@
 package com.disruptor.study;
 
+import java.nio.ByteBuffer;
+import java.util.concurrent.ThreadFactory;
+
+import org.junit.Test;
+
 import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
-
-import org.junit.Test;
-
-import java.nio.ByteBuffer;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
 
 /**
  * Disruptor通过以下设计来解决队列速度慢的问题： - 环形数组结构
@@ -41,7 +39,6 @@ public class DisruptorStudy {
         // 生产者的线程工厂
         ThreadFactory threadFactory = new ThreadFactory() {
             int i = 0;
-
             @Override
             public Thread newThread(Runnable r) {
                 return new Thread(r, "simpleThread" + String.valueOf(i++));
@@ -64,7 +61,7 @@ public class DisruptorStudy {
         RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
         LongEventProducer producer = new LongEventProducer(ringBuffer);
         ByteBuffer bb = ByteBuffer.allocate(8);
-        for (long l = 0; true; l++) {
+        for (long l = 0; l < 20L; l++) {
             bb.putLong(0, l);
             producer.onData(bb);
             Thread.sleep(1000);
