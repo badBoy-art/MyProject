@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.StringJoiner;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import javax.annotation.Nullable;
 
@@ -248,8 +249,16 @@ public class StringTest {
         try {
             Map<String, List<String>> map = Maps.newHashMap();
             map.put("zhangsan", Lists.newArrayList("10", "20", "30"));
+
+            Map<String, String> map1 = Lists.newArrayList().stream().collect(Collectors.toMap(Object::toString, Object::toString, (k1, k2) -> k1));
+            System.out.println(map1);
+
             JSONObject jsonObject = JSONObject.parseObject(str);
             System.out.println(jsonObject);
+
+            jsonObject.putAll(map1);
+            System.out.println(jsonObject);
+
             jsonObject.putAll(map);
             System.out.println(jsonObject);
         } catch (Exception e) {

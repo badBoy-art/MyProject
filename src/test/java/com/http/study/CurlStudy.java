@@ -62,7 +62,7 @@ public class CurlStudy {
                 city = java.net.URLEncoder.encode(swiftPdfUrls.get(3), StandardCharsets.UTF_8.name());
                 keyWord = java.net.URLEncoder.encode(swiftPdfUrls.get(2), StandardCharsets.UTF_8.name());
 
-                String url = "https://vc-admin.corp.kuaishou.com/rest/op/vc/platform/poi/search/search?keyword=" + keyWord + "&cityName=" + city + "&cursor=&count=1";
+                String url = "https://********?keyword=" + keyWord + "&cityName=" + city + "&cursor=&count=1";
                 String[] cmds = {"curl",
                         url,
                         "-H", "Connection: keep-alive", "-H", "'sec-ch-ua: \" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"'",
@@ -75,7 +75,7 @@ public class CurlStudy {
                         "-H", "Sec-Fetch-Dest: empty",
                         "-H", "Referer: https://vc-admin.corp.kuaishou.com/admin/poi-search/simulate",
                         "-H", "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8",
-                        "-H", "Cookie: apdid=ab3b46c4-9479-4ec9-80b0-a7f5a62d1536c9093384c268f8f2fc2441fb90318c4f:1615866823:1; _did=web_6510947937E07C57; ksCorpDeviceid=6be62507-e736-4e29-94ff-85f1d71c0a8b; clientid=3; did=web_6e74a7008c6f166cc790f2f88086552c; client_key=65890b29; csrfToken=v1BN37zBnUDpMGDuHJbtEvm3; accessproxy_session=7d82632c-ee9e-4c62-8141-a19e047fd5a8; JSESSIONID=160FDC65BC5003EDB719984D89489DA2; operation_platform_cas_token=ChVrdWFpc2hvdS5vcGVyYXRpb24udmMScDg9DMy3apGrjCwcY2YtBxBW4JQNHqD4WDPt3SZvhUDzU3HBxr4ZjLJPLjqWehDiqGEDrAfBMGXre7hoXgL82N06JJx6zoECpn0FITaINogm7jVCp3yOst4bpZniCc4Lpd8O5hTwWpHOuxkrhAHVNrIaEuR5C2CCnRtu0OMbIqrspFcwTiIgjpEaumRVvRx5HQjyKxTF1yfDdfsAAYP+JBrLLOWg4FAoBTAB",
+                        "-H", "Cookie: ",
                         "--compressed"};
 
                 Thread.sleep(20);

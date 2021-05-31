@@ -15,6 +15,7 @@ import java.util.IntSummaryStatistics;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -52,8 +53,9 @@ public class Base {
     public void tsetFilter() {
         List<String> strs = Lists.newArrayList("zhangsan", "lisi", "wangwu");
         System.out.println(strs.toString());
-        System.out.println(strs.stream().filter(s -> "ss".equalsIgnoreCase(s)).map(x -> new AbstractMap.SimpleEntry<>(x, x)).filter(s -> "wangwu".equalsIgnoreCase(s.getValue()))
+        System.out.println(strs.stream().filter("ss"::equalsIgnoreCase).map(x -> new AbstractMap.SimpleEntry<>(x, x)).filter(s -> "wangwu".equalsIgnoreCase(s.getValue()))
                 .collect(toSet()));
+        System.out.println(strs.stream().filter("naliu"::equalsIgnoreCase).filter(Objects::nonNull).collect(toList()));
     }
 
     @Test
