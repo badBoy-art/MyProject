@@ -21,11 +21,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
 @Service
 public class NettyServer {
     public void run(int port) {
-        new Thread() {
-            public void run() {
-                runServer(port);
-            }
-        }.start();
+        new Thread(() -> runServer(port)).start();
     }
 
     private void runServer(int port) {

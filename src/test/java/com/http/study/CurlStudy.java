@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -45,7 +44,7 @@ public class CurlStudy {
         return null;
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException, InterruptedException {
+    public static void main(String[] args) {
         List<String> datas = demoFileRead("/Users/zhaoxuedui/Desktop/1.txt");
         StringBuffer stringBuffer = new StringBuffer();
         //System.out.println(datas.get(1));
@@ -59,8 +58,8 @@ public class CurlStudy {
             String city = null;
             String keyWord = null;
             try {
-                city = java.net.URLEncoder.encode(swiftPdfUrls.get(3), StandardCharsets.UTF_8.name());
-                keyWord = java.net.URLEncoder.encode(swiftPdfUrls.get(2), StandardCharsets.UTF_8.name());
+                city = java.net.URLEncoder.encode("北京", StandardCharsets.UTF_8.name());
+                keyWord = java.net.URLEncoder.encode("烤鸭", StandardCharsets.UTF_8.name());
 
                 String url = "https://********?keyword=" + keyWord + "&cityName=" + city + "&cursor=&count=1";
                 String[] cmds = {"curl",
@@ -73,7 +72,7 @@ public class CurlStudy {
                         "-H", "Sec-Fetch-Site: same-origin",
                         "-H", "Sec-Fetch-Mode: cors",
                         "-H", "Sec-Fetch-Dest: empty",
-                        "-H", "Referer: https://vc-admin.corp.kuaishou.com/admin/poi-search/simulate",
+                        "-H", "Referer: https://vc-admin.corp.xxx.com/admin/poi-search/simulate",
                         "-H", "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8",
                         "-H", "Cookie: ",
                         "--compressed"};
@@ -83,7 +82,7 @@ public class CurlStudy {
                 // System.out.println(swiftPdfUrls.get(0));
                 stringBuffer.append(swiftPdfUrls.get(0)).append("\t").append(swiftPdfUrls.get(1)).append("\t")
                         .append(swiftPdfUrls.get(2)).append("\t").append(swiftPdfUrls.get(3)).append("\t")
-                        .append(CollectionUtils.isNotEmpty(vo.getData().getSearchDataVOs()) ? vo.getData().getSearchDataVOs().get(0).getKuaiShouPoi().getPoiId() + "" : "").append("\n");
+                        .append(CollectionUtils.isNotEmpty(vo.getData().getSearchDataVOs()) ? vo.getData().getSearchDataVOs().get(0).getKsPoi().getPoiId() + "" : "").append("\n");
                 System.out.println(i.getAndIncrement());
             } catch (Exception e) {
                 e.printStackTrace();

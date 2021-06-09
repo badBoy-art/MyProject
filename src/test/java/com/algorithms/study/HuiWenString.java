@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class HuiWenString {
 
-    private String baseStr = "abcderfredba";
+    private String baseStr = "ab";
 
     /**
      * 动态规划法获得最大回文串
@@ -157,6 +157,38 @@ public class HuiWenString {
             ++right;
         }
         return (right - left - 2) / 2;
+    }
+
+    @Test
+    public void testCentre() {
+        String str = "aa";
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < str.length(); i++) {
+            /**
+             * i可能是中间的值 exp bab
+             * i可能不是中间的值 exp aa
+             */
+            //i aa
+            int even = getMaxLength(str, i, i + 1);
+            //i bab
+            int odd = getMaxLength(str, i, i);
+            int maxLength = Math.max(even, odd);
+            if (maxLength > end - start) {
+                start = i - (maxLength - 1) / 2;
+                end = i + maxLength / 2;
+            }
+        }
+
+        System.out.println(str.substring(start, end + 1));
+    }
+
+    private int getMaxLength(String str, int left, int right) {
+        while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+            --left;
+            ++right;
+        }
+        return right - left - 1;
     }
 
 }

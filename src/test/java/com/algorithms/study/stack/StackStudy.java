@@ -1,12 +1,17 @@
-package com.algorithms.study.leetcode;
+package com.algorithms.study.stack;
 
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 import java.util.TreeMap;
 
+import org.apache.curator.shaded.com.google.common.collect.Lists;
 import org.junit.Test;
+
+import com.google.common.collect.Maps;
 
 /**
  * @author zhaoxuedui <zhaoxuedui@''.com>
@@ -226,6 +231,92 @@ public class StackStudy {
     public void test03() {
         Integer[] array = new Integer[]{5, 1, 3, 4, 2};
         System.out.println(oddEvenJumps2(array));
+    }
+
+    @Test
+    public void testValidParentheses() {
+        String s = "{[]}";
+        System.out.println(validParentheses(s));
+        System.out.println(longestValidParentheses(")()())"));
+    }
+
+    private boolean validParentheses(String s) {
+        Map<Character, Character> map = Maps.newHashMap();
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+        Deque<Character> stack = new LinkedList<>();
+        for (char a : s.toCharArray()) {
+            if (map.containsKey(a)) {
+                stack.push(a);
+            } else {
+                if (stack.isEmpty() || map.get(stack.peek()) != a) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+        System.out.println("over ");
+        return stack.isEmpty();
+    }
+
+    private int longestValidParentheses(String s) {
+        int max_len = 0;
+        int last = -1;
+
+        Deque<Integer> stack = new LinkedList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                if (stack.isEmpty()) {
+                    last = i;
+                } else {
+                    stack.pop();
+                    if (stack.isEmpty()) {
+                        max_len = Math.max(max_len, i - last);
+                    } else {
+                        max_len = Math.max(max_len, i - stack.pop());
+                    }
+                }
+            }
+        }
+
+        return max_len;
+    }
+
+    @Test
+    public void testEvaluateReversePolishNotation() {
+        List<String> tokens = Lists.newArrayList("10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+");
+        System.out.println(evaluateReversePolishNotation(tokens));
+    }
+
+    private String evaluateReversePolishNotation(List<String> tokens) {
+        List<String> operatorSymbols = Lists.newArrayList("+", "-", "*", "/");
+        int num1;
+        int num2;
+        Deque<String> stack = new LinkedList<>();
+        for (String str : tokens) {
+            if (!operatorSymbols.contains(str)) {
+                stack.push(str);
+            } else {
+                num1 = Integer.parseInt(stack.pop());
+                num2 = Integer.parseInt(stack.pop());
+                if ("+".equals(str)) {
+                    stack.push(num1 + num2 + "");
+                } else if ("-".equals(str)) {
+                    stack.push(num1 - num2 + "");
+                } else if ("*".equals(str)) {
+                    stack.push(num1 * num2 + "");
+                    if (stack.size() == 2) {
+                    }
+                } else {
+                    stack.push((num2 / num1) + "");
+                }
+            }
+        }
+        return stack.pop();
     }
 
 }

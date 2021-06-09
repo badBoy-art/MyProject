@@ -32,11 +32,7 @@ public class NettyClient {
     private Channel channel;
 
     public void run(String strUri) {
-        new Thread() {
-            public void run() {
-                runClient(strUri);
-            }
-        }.start();
+        new Thread(() -> runClient(strUri)).start();
 
     }
 

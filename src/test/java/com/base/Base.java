@@ -38,6 +38,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.guava.study.JsonUtil;
 
 import joptsimple.internal.Strings;
 
@@ -212,7 +213,7 @@ public class Base {
                         .salary(400D)
                         .hobbits(Lists.newArrayList("5", "6"))
                         .build());
-
+        System.out.println(JsonUtil.bean2Json(list));
         Map<String, Person> map = list.stream().collect(Collectors.toMap(Person::getName, a -> a, (k1, k2) -> k1))
                 .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(Person::getAge)))
                 .collect(Collectors.toMap(
@@ -309,7 +310,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("111262".hashCode());
+        System.out.println("984072841".hashCode());
     }
 
     @Test

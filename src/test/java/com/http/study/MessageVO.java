@@ -25,7 +25,7 @@ class Datas {
 
 @Data
 class PoiSearchDataVO {
-    private PoiSearchDatailVO kuaiShouPoi;
+    private PoiSearchDatailVO ksPoi;
 }
 
 @Data
