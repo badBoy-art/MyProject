@@ -1,5 +1,7 @@
 package com.String.study;
 
+import static java.util.stream.Collectors.toList;
+
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -561,6 +563,13 @@ public class StringTest {
         int length = String.valueOf(num).length();
         String shard = String.format("%0" + length + "d", 3);
         System.out.println(shard);
+    }
+
+    @Test
+    public void testSplitterOnPattern() {
+        List<Long> ids = Splitter.on(Pattern.compile(",|，")).omitEmptyStrings().trimResults().splitToList("")
+                .stream().map(Long::parseLong).collect(toList());
+        System.out.println(ids);
     }
 }
 

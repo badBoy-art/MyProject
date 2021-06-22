@@ -185,7 +185,10 @@ public class Base {
         List<String> list = new ArrayList<>();
         list.add("abs");
         list.addAll(Collections.emptyList());
+        List<String> list2 = Lists.newArrayList();
+        list2.add("aaaa");
         System.out.println(list);
+        System.out.println(list2);
     }
 
     @Test
@@ -310,7 +313,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("984072841".hashCode());
+        System.out.println("986014016".hashCode());
     }
 
     @Test
@@ -544,15 +547,12 @@ public class Base {
 
     @Test
     public void testSql() {
-        String str = "6724909544116701482,\n" +
-                "6724909355514082062,\n";
+        String str = "";
 
         List<String> poiIds = Splitter.on(",").omitEmptyStrings().trimResults().splitToList(str);
 
-        String sql = "update _%s set image_url = \"1620891911016.png\" where poi_id = %s;";
-
+        String sql = "update _%s set image_url = \"234419432075038773.png\" where poi_id = %s;";
         poiIds.forEach(x -> System.out.println(String.format(sql, (Long.parseLong(x) % 10) + "", x)));
-
     }
 
     @Test

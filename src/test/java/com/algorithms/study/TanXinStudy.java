@@ -20,7 +20,7 @@ public class TanXinStudy {
     public void test() {
         System.out.println(canJump(new int[]{2, 3, 1, 1, 4}));
         System.out.println(canJump(new int[]{3, 2, 1, 0, 4}));
-        System.out.println(jump(new int[]{2, 3, 1, 1, 4}));
+        System.out.println(jump(new int[]{2, 3, 5, 1, 1, 1, 4}));
 
         System.out.println(maxProfit(new int[]{2, 3, 7, 4, 5, 9, 8, 1}));
         System.out.println(maxProfit2(new int[]{2, 3, 7, 4, 5, 9, 8, 1}));

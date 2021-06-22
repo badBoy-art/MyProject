@@ -14,7 +14,7 @@ public class LetterCombinationsStudy {
 
     @Test
     public void test() {
-        System.out.println(letterCombinations("74"));
+        System.out.println(letterCombinations("47"));
     }
 
     public List<String> letterCombinations(String digits) {
@@ -45,6 +45,5 @@ public class LetterCombinationsStudy {
 
         return result;
     }
-
 
 }
