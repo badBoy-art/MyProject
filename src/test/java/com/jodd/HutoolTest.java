@@ -1,7 +1,9 @@
 package com.jodd;
 
-import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
+import org.apache.curator.shaded.com.google.common.collect.Lists;
 import org.junit.Test;
 
 import cn.hutool.core.comparator.PinyinComparator;
@@ -22,11 +24,12 @@ public class HutoolTest {
     @Test
     public void test02() {
         PinyinComparator comparator = new PinyinComparator();
-        String[] arrStrings = {"乔峰", "郭靖", "杨过", "张无忌", "韦小宝", "张有忌", "张有才"};
+        List<String> arrs = Lists.newArrayList("乔峰", "郭靖", "杨过", "张无忌", "韦小宝", "张有忌", "张有才");
         // 使根据指定比较器产生的顺序对指定对象数组进行排序。
-        Arrays.sort(arrStrings, comparator);
-        for (int i = 0; i < arrStrings.length; i++)
-            System.out.println(arrStrings[i]);
+        arrs = arrs.stream().sorted(comparator).collect(Collectors.toList());
+        for (String str : arrs) {
+            System.out.println(str);
+        }
 
     }
 }

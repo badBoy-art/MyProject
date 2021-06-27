@@ -567,7 +567,7 @@ public class StringTest {
 
     @Test
     public void testSplitterOnPattern() {
-        List<Long> ids = Splitter.on(Pattern.compile(",|，")).omitEmptyStrings().trimResults().splitToList("")
+        List<Long> ids = Splitter.on(Pattern.compile("[,，]")).omitEmptyStrings().trimResults().splitToList("")
                 .stream().map(Long::parseLong).collect(toList());
         System.out.println(ids);
     }

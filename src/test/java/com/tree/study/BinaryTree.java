@@ -67,6 +67,7 @@ public class BinaryTree {
                     }
                 } else {
                     error = "having same value in binary tree";
+                    break;
                 }
             }
         }
@@ -153,6 +154,7 @@ public class BinaryTree {
      */
     //前序非递归
     public void preOrderByStack() {
+        long startTime = System.currentTimeMillis();
         System.out.println("前序非递归遍历:");
         Stack<Node> stack = new Stack<Node>();
         Node current = root;
@@ -168,7 +170,7 @@ public class BinaryTree {
                 current = current.rightChild;
             }
         }
-        System.out.println();
+        System.out.println(System.currentTimeMillis() - startTime);
     }
 
     /**
@@ -234,6 +236,7 @@ public class BinaryTree {
                 queue.offer(node.rightChild);
             }
         }
+        System.out.println();
     }
 
     /**
@@ -348,5 +351,40 @@ public class BinaryTree {
         return true;
     }
 
+    public void preOrderMorris() {
+        long startTime = System.currentTimeMillis();
+        System.out.println("前序Morris遍历:");
+        if (root == null) {
+            System.out.println("isEmpty");
+            return;
+        }
+        Node p1 = root;
+        Node p2 = null;
+        while (p1 != null) {
+            p2 = p1.leftChild;
+            if (p2 != null) {
+                //找到左子树的最右叶子节点
+                while (p2.rightChild != null && p2.rightChild != p1) {
+                    p2 = p2.rightChild;
+                }
+                //添加 right 指针，对应 right 指针为 null 的情况
+                //标注 1
+                if (p2.rightChild == null) {
+                    p1.display();
+                    p2.rightChild = p1;
+                    p1 = p1.leftChild;
+                    continue;
+                }
+                //对应 right 指针存在的情况，则去掉 right 指针
+                p2.rightChild = null;
+                //标注2
+            } else {
+                p1.display();
+            }
+            //移动 p1
+            p1 = p1.rightChild;
+        }
+        System.out.println(System.currentTimeMillis() - startTime);
+    }
 
 }
