@@ -350,7 +350,8 @@ public class BinaryTree {
         current = null;
         return true;
     }
-
+    
+    //前序非递归 Morris
     public void preOrderMorris() {
         long startTime = System.currentTimeMillis();
         System.out.println("前序Morris遍历:");

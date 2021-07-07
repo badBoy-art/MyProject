@@ -28,6 +28,7 @@ public class OrderingStudy {
         List<String> list = Lists.newArrayList("a", "bc", "cde");
         List<String> listCopy = lengthOrdering.reverse().sortedCopy(list);
         System.out.println(listCopy);
+        System.out.println(lengthOrdering.sortedCopy(listCopy));
     }
 
     @Test

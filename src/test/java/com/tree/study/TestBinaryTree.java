@@ -15,23 +15,27 @@ public class TestBinaryTree {
 
     @Before
     public void initBinaryTree() {
-        for (int i = 1; i <= 500; i++) {
-            binaryTree.insert(i);
-        }
+
+        binaryTree.insert(5);
+        binaryTree.insert(11);
+        binaryTree.insert(12);
+        binaryTree.insert(3);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
     }
 
     @Test
     public void testInsert() {
         //前序遍历
-        binaryTree.preOrderTraverse();
+        // binaryTree.preOrderTraverse();
         //层级遍历
-        binaryTree.levelTraverse();
+        // binaryTree.levelTraverse();
         //中序遍历
-        binaryTree.inOrderTraverse();
+        // binaryTree.inOrderTraverse();
         //后续递归
-        binaryTree.postOrderTraverse();
+        // binaryTree.postOrderTraverse();
         //前序非递归 -- stack
-        binaryTree.preOrderByStack();
+        // binaryTree.preOrderByStack();
         //前序非递归 -- morris
         binaryTree.preOrderMorris();
     }

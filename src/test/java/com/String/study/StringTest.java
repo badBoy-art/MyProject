@@ -571,6 +571,34 @@ public class StringTest {
                 .stream().map(Long::parseLong).collect(toList());
         System.out.println(ids);
     }
+
+    @Test
+    public void testLength() {
+        String str = "1";
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            str = str + "1";
+        }
+        System.out.println(str.length());
+    }
+
+    @Test
+    public void testChangeParam() {
+        test("1", "2", "3", "4");
+        test("a", "b", "c");
+        test("", "", "");
+    }
+
+    public void test(String... args) {
+        if (StringUtils.isNoneBlank(args)) {
+            for (String str : args) {
+                if (StringUtils.isNotBlank(str)) {
+                    System.out.println(str);
+                }
+            }
+        }
+        System.out.println("over");
+    }
+
 }
 
 class MyCom implements Comparator<String> {

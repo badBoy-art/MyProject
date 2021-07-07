@@ -1,16 +1,21 @@
 package com.thread.study;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
+import com.stratio.cassandra.contrib.NotifyingBlockingThreadPoolExecutor;
+
+import lombok.SneakyThrows;
 
 /**
  * Executors Study
@@ -56,7 +61,7 @@ public class ExecutorsStudy {
         System.out.println(list);
         System.out.println(list1);
 
-        List<String> list2 = list1.stream().sorted((a, b) -> b.compareTo(a)).collect(Collectors.toList());
+        List<String> list2 = list1.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
         list2.stream().forEach(System.out::println);
 
@@ -64,5 +69,61 @@ public class ExecutorsStudy {
 
         map.values().stream().forEach(System.out::println);
 
+    }
+
+    /**
+     * @see NotifyingBlockingThreadPoolExecutor
+     */
+    @Test
+    public void testNotifyingBlockingThreadPoolExecutor() {
+        NotifyingBlockingThreadPoolExecutor threadPoolExecutor = new NotifyingBlockingThreadPoolExecutor(5, 10, 15, TimeUnit.SECONDS);
+        for (int i = 0; i < 50; i++) {
+            threadPoolExecutor.execute(new AThread(i));
+        }
+        try {
+            threadPoolExecutor.await();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Done!");
+    }
+
+    /**
+     * @see NotifyingBlockingThreadPoolExecutor
+     */
+    @Test
+    public void testNotifyingBlockingThreadPoolExecutor2() {
+        NotifyingBlockingThreadPoolExecutor threadPoolExecutor = new
+                NotifyingBlockingThreadPoolExecutor(5, 10, 15, TimeUnit.SECONDS,
+                1, TimeUnit.SECONDS, () -> false);
+        for (int i = 0; i < 50; i++) {
+            threadPoolExecutor.execute(new AThread(i));
+        }
+        try {
+            threadPoolExecutor.await();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Done!");
+    }
+
+
+}
+
+class AThread implements Runnable {
+
+    private int arg;
+
+    public AThread(int arg) {
+        this.arg = arg;
+    }
+
+    @SneakyThrows
+    @Override
+    public void run() {
+        System.out.println(arg);
+        Thread.sleep(1000);
     }
 }

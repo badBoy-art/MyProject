@@ -21,6 +21,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.junit.Test;
@@ -32,6 +33,9 @@ import com.google.common.base.Splitter;
 import com.google.common.base.Supplier;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Range;
+import com.google.common.collect.RangeMap;
+import com.google.common.collect.TreeRangeMap;
 import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -246,7 +250,7 @@ public class Base {
     @Test
     public void testComparator() {
         List<Person> list = Lists.newArrayList();
-        Person p1 = Person.builder().salary(0.0).build();
+        Person p1 = Person.builder().salary(100.0).build();
         Person p2 = Person.builder().salary(-0.0).build();
         Person p3 = Person.builder().salary(-(0.0d / 0.0)).build();
         Person p4 = Person.builder().salary(0x7ff8000000000000L).build();
@@ -255,6 +259,8 @@ public class Base {
         list.add(p2);
         //list.add(p3);
         //list.add(p4);
+        System.out.println(CollectionUtils.emptyIfNull(list));
+        System.out.println(CollectionUtils.emptyIfNull(null));
         System.out.println(list.subList(0, list.size()));
         List<Person> listSorted = list.stream().sorted(Comparator.comparingDouble(Person::getSalary)).collect(toList());
         System.out.println(listSorted);
@@ -313,7 +319,12 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("986014016".hashCode());
+        System.out.println("90858074".hashCode());
+    }
+
+    @Test
+    public void testObjectsEquals() {
+        System.out.println("11".equalsIgnoreCase(String.valueOf(11L)));
     }
 
     @Test
@@ -636,6 +647,18 @@ public class Base {
 
         System.out.println("IdentityHashMap运行结果：" + idenMap);
         System.out.println("HashMap运行结果：" + map);
+    }
+
+    @Test
+    public void testRangeMap() {
+        RangeMap<Integer, String> rangeMap = TreeRangeMap.create();
+        rangeMap.put(Range.closed(1, 10), "foo");
+        rangeMap.put(Range.open(3, 6), "bar");
+        rangeMap.put(Range.open(10, 20), "foo");
+        System.out.println(rangeMap);
+        rangeMap.remove(Range.closed(5, 11));
+        System.out.println(rangeMap);
+        System.out.println(rangeMap.get(2));
     }
 
 }
