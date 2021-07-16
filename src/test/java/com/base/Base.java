@@ -319,7 +319,7 @@ public class Base {
         System.out.println(Hashing.sha256().hashBytes("".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("cba".getBytes()).toString());
         System.out.println(Hashing.sha256().hashBytes("abc".getBytes()).toString());
-        System.out.println("90858074".hashCode());
+        System.out.println("12503396".hashCode());
     }
 
     @Test
@@ -456,6 +456,7 @@ public class Base {
         Map<Boolean, List<Person>> part = personList.stream().collect(Collectors.partitioningBy(x -> x.getAge() > 8000));
         // 将员工按性别分组
         Map<Integer, List<Person>> group = personList.stream().collect(Collectors.groupingBy(Person::getSex));
+
         Map<String, Map<String, List<Person>>> collect = personList.stream()
                 .collect(Collectors
                         .groupingBy(Person::getName, Collectors.groupingBy(Person::getAddress)));

@@ -2,6 +2,8 @@ package com.base;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +22,7 @@ public class Person {
     private String name;
     private Integer age;
     private Integer sex;
+    @JsonAlias("addr_ess")
     private String address;
     private double salary;
     private List<String> hobbits;

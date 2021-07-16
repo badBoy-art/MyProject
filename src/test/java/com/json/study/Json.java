@@ -1,5 +1,14 @@
 package com.json.study;
 
+import static com.json.study.ObjectMapperUtils.fromJson;
+
+import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+
 import com.Extends.study.Dog;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -7,11 +16,6 @@ import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.collect.Lists;
-import org.junit.Test;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author xuedui.zhao
@@ -68,5 +72,16 @@ public class Json {
         Map map = JSON.parseObject(str, new TypeReference<Map<String, String>>() {
         });
         System.out.println(map.get("orderNo"));
+    }
+
+    @Test
+    public void testObjectMapperUtils() {
+        String str = "{\"photoIds\":[\"52917608636\"]}";
+        Map<String, Object> map = fromJson(str);
+        map.forEach((key, value) -> {
+            if (value instanceof Collection) {
+                System.out.println("key = " + key + " value = " + ((List)value).get(0).getClass());
+            }
+        });
     }
 }
